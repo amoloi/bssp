@@ -1,40 +1,27 @@
-*******************************
-BSSP Application Login Details.
-*******************************
-| Username                   | Password                  | Description                                                                                                                                                                                                                                                                                                     |
-|----------------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| admin                      | bsspadmin                 | BSSP Application Administrator                                                                                                                                                                                      |
-| commitee                   | commitee                  | BSSP Application Commitee Resolution member                                                                                                                                                                                   |
-| bssp                       | bssp                      | BSSP Standard Application User
-| guest                      |                           | Anyone who has not signed in into the BSSP Application                                                                                                                                                                                                                                                                             |
+# nmms
+Business Support Service Programme - [BSSP]
+===================================
 
-******************************
-Reset Tables
-******************************
-TRUNCATE bssp_address ;
-TRUNCATE bssp_application_numbers_gen;
-TRUNCATE bssp_applications;
-TRUNCATE bssp_contacts;
-TRUNCATE bssp_legal_entities;
-TRUNCATE bssp_master_budget_numbers_gen;
-TRUNCATE bssp_master_budgets;
-TRUNCATE bssp_project_budgets;
-TRUNCATE bssp_project_numbers_gen;
-TRUNCATE bssp_projects;
-TRUNCATE bssp_request_numbers_gen;
-TRUNCATE bssp_requests;
-TRUNCATE bssp_resolutions;
-TRUNCATE bssp_project_implementation;
-TRUNCATE bssp_project_budgets;
-TRUNCATE bssp_project_consultant;
-TRUNCATE bssp_project_payment_installments;
-TRUNCATE bssp_assignment_extensions;
-TRUNCATE bssp_employment_creation;
-TRUNCATE bssp_project_implementation;
-TRUNCATE bssp_project_consultant;
-TRUNCATE bssp_mou;
+Introduction
+------------
+BSSP is web application built on Zend Framework 1.12 and uses
+the ZF MVC layer and module system. 
+The application provide functionalities to allow a donor orhanization to monitor bussiness support services provided to 
+recepient organization, the system allow the registration of the recepient business, request of funds, budget and user management
+just to list a few feature...
 
-******************************
-Created by Innocent J Blac.
-5th Jan 2015 00h25.
-******************************
+Zend Framework is provided by Zend Technologies.
+
+Installation
+------------
+
+Details to be provided later as time allows.
+
+
+Database
+--------
+Details to be provided later as time allows.
+
+Virtual Host
+------------
+Details to be provided later as time allows.
