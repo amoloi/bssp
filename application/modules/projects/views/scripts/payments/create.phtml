@@ -1,0 +1,98 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->entityType; ?></div>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Resolution Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-3"><?php echo $this->form->discussionDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->corespondenceDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->discussionStatus; ?></div>
+                                <div class="col-lg-3">
+                                    <?php echo $this->form->requestType; ?></div>
+                            </section>                           
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Consultant Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->consultantId; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->principleConsultant; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->mouPsSignedDate; ?></div>
+                            </section>                           
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Payments Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->firstInstalment; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->firstInstalmentDate; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->secondInstalment; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->secondInstalmentDate; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->thirdInstalment; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->thirdInstalmentDate; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>                            
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->residentialAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->region; ?></div>
+                            </section>                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Funds Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->fundsApproved; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->fundsOutstanding; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->fundsApprovedDate; ?></div>
+                            </section>                           
+                        </fieldset> 
+                        <fieldset>
+                            <legend>Assignment Extension Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->assignmentDiscussionDate; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->assignmentEstensionDateTo; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->assignmentCommitteeRemarks; ?></div>
+                            </section>                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Implementation Status Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->dateIssuedToPromoters; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->reportType; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->sourceOfFunds; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->implementationRemarks; ?></div>
+                            </section>                             
+                        </fieldset>
+                        <fieldset>
+                            <legend>Overall Project Employment Creation Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->totalNumberOfMaleEmployees; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->totalNumberOfFemaleEmployees; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>                            
+                        </fieldset>                 
+                <fieldset class="actions-wrap">                   
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save Resolution'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>    

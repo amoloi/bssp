@@ -1,0 +1,12 @@
+<?php
+    echo sprintf('<section class="row instalment" id="installment_%d">
+                                <div class="col-lg-3 phase">%s</div>
+                                <div class="col-lg-3 instalmentAmount">%s</div>
+                                <div class="col-lg-3 instalmentDate">%s</div>
+                                <div class="col-lg-3 action">%s</div>
+                  </section>' , 
+                                $this->form->getRowCount() ,
+                                $this->form->phase ,
+                                $this->form->instalmentAmount , 
+                                $this->form->instalmentDate,
+                                $this->form->btn_remove);

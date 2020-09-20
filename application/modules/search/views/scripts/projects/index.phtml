@@ -1,0 +1,110 @@
+<form class="search-form" method="post" action="/search/projects/">
+<section>
+
+    <div class="table">
+    <div class="row header blue">
+      <div class="cell">
+        Project Number
+      </div>
+      <div class="cell">
+        Project Name
+      </div>
+      <div class="cell">
+        Status
+      </div>
+      <div class="cell">
+        Amount Committed
+      </div>
+      <div class="cell">
+        Amount Paid
+      </div>
+      <div class="cell">
+        Amount Outstanding
+      </div>
+      <div class="cell">
+        
+      </div>         
+    </div>
+    <div class="row search-row">
+        
+            <div class="cell">
+              <?php echo $this->form->projectNumber ?>
+            </div>
+            <div class="cell">
+              <?php echo $this->form->projectName ?>
+            </div>
+            <div class="cell">
+              <?php echo $this->form->projectStatus ?>
+            </div>
+            <div class="cell ">
+
+            </div>
+            <div class="cell ">
+
+            </div>
+            <div class="cell ">
+
+            </div>        
+            <div class="cell action text-right">
+                <?php echo $this->form->btnSubmit->setLabel('Search'); ?>
+            </div>
+        
+    </div>         
+
+     
+<?php if(count($this->paginator) > 0): ?>
+                            <?php $count = 1 ; foreach ($this->paginator as $entityOnject): ?>
+
+                <div class="row">
+                  <div class="cell">
+                    <span class="text-info"><?php echo $this->escape($count) ?></span>  : <?php echo $this->escape($entityOnject['number']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['name']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['status']) ?>
+                  </div>
+                  <div class="cell">
+                    $ <?php echo $this->escape($entityOnject['bugdet']['budgetAmount']) ?>
+                  </div>
+                  <div class="cell">
+                    $ <?php echo $this->escape($entityOnject['bugdet']['paidAmount']) ?>
+                  </div>
+                  <div class="cell">
+                    $ <?php echo $this->escape($entityOnject['bugdet']['autstandingAmount']) ?>
+                  </div>
+                    <div class="cell action text-right">
+                                            <?php if( 'APPROVED' === $entityOnject['status']): ?>
+
+                                                  <a class="text-info" href="<?php echo $this->escape($this->url(array('module'=>'projects','controller' => 'composition', 'action' => 'index' , 'pn'=> $this->escape($entityOnject['number'])), null, true)) ?>" onclick="Docs.collapseOperationsForResource('pet'); return false;">
+                                                    Committee Resolution Info
+                                                  </a>     
+
+                                            <?php else:?>                
+                                                  <a href="<?php echo $this->escape($this->url(array('module'=>'projects','controller' => 'composition', 'action' => 'index' , 'pn'=> $this->escape($entityOnject['number'])), null, true)) ?>" onclick="Docs.collapseOperationsForResource('pet'); return false;">
+                                                      Project in Details
+                                                  </a>             
+                                            <?php endif;?>
+                    </div>                   
+                </div>                               
+                    <?php $count++; endforeach; ?>
+  </div>
+    </section>
+                    <?php else: ?>
+  </div>
+    </section>    
+                        <section class="row">
+                            <div class="info-wrap">
+                                <p class="text-info info">
+                                    There are no projects records in the BSSP system to match your search criteria.Please change the search criteria and try again.
+                                </p>
+                            </div>
+                        </section>                            
+                    <?php endif; ?>       
+    
+
+<section>
+    <?php echo $this->paginationControl($this->paginator, 'Elastic', ['partials/pagination.phtml' , 'service']); ?>
+</section>
+</form>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+    <nav>
+        <label>Home</label>
+        <title>BSSP Home</title>
+        <controller>index</controller>
+        <action>index</action>
+                <resource>default::index</resource>
+                <privilege>index</privilege>        
+        <pages>                      
+            <auctions>
+                <label>Applications</label>
+                <module>promoters</module>
+                <controller>index</controller>
+                <action>index</action>
+                <resource>promoters::index</resource>
+                <privilege>index</privilege> 
+                            <pages>
+                                <newauction>
+                                    <label>New Application Entry Form</label>
+                                    <module>promoters</module>
+                                    <controller>create</controller>
+                                    <action>index</action>
+                                    <resource>promoters::create</resource>
+                                    <privilege>index</privilege> 
+                                </newauction>
+                                <editauction>
+                                    <label>Editing Application Data</label>
+                                    <module>promoters</module>
+                                    <controller>update</controller>
+                                    <action>index</action>
+                                        <resource>promoters::update</resource>
+                                        <privilege>index</privilege> 
+                                </editauction>
+                                <request-details>
+                                    <label>Application`s Request Details</label>
+                                    <module>promoters</module>
+                                    <controller>request-details</controller>
+                                    <action>index</action>
+                                        <resource>promoters::request-details</resource>
+                                        <privilege>index</privilege> 
+                                </request-details>
+                                <applications-details>
+                                    <label>Application Details</label>
+                                    <module>promoters</module>
+                                    <controller>details</controller>
+                                    <action>index</action>
+                                        <resource>promoters::details</resource>
+                                        <privilege>index</privilege> 
+                                </applications-details>
+                                <commitee-resoltution-search>
+                                    <label>Applications Search Facility</label>
+                                    <module>search</module>
+                                    <controller>applications</controller>
+                                    <action>index</action>
+                                        <resource>search::applications</resource>
+                                        <privilege>index</privilege> 
+                                </commitee-resoltution-search>                                                                                                                                                                                                    
+                            </pages>                     
+            </auctions>
+            <commitee-resolutions>
+                <label>Commitee Resolutions</label>
+                <module>commiteeresolutions</module>
+                <controller>index</controller>
+                <action>index</action>
+                    <resource>commiteeresolutions::index</resource>
+                    <privilege>index</privilege> 
+                            <pages>
+                                <newauction>
+                                    <label>New Commitee Resolution Entry Form</label>
+                                    <module>commiteeresolutions</module>
+                                    <controller>create</controller>
+                                    <action>index</action>
+                                        <resource>commiteeresolutions::create</resource>
+                                        <privilege>index</privilege> 
+                                </newauction>
+                                <editauction>
+                                    <label>Commitee Resolution Details</label>
+                                    <module>commiteeresolutions</module>
+                                    <controller>details</controller>
+                                    <action>index</action>
+                                        <resource>commiteeresolutions::details</resource>
+                                        <privilege>index</privilege> 
+                                </editauction>
+                                <commitee-resoltution-search>
+                                    <label>Commitee Resolutions Search Facility</label>
+                                    <module>search</module>
+                                    <controller>commitee-resolutions</controller>
+                                    <action>index</action>
+                                        <resource>search::commitee-resolutions</resource>
+                                        <privilege>index</privilege> 
+                                </commitee-resoltution-search>                                                                                                
+                            </pages>                     
+            </commitee-resolutions>                       
+            <auctionbuyers>
+                <label>Project Consultants</label>
+                <module>consultants</module>
+                <controller>index</controller>
+                <action>index</action>
+                <resource>consultants::index</resource>
+                <privilege>index</privilege> 
+                            <pages>
+                                <newauction>
+                                    <label>New Consultant Entry Form</label>
+                                    <module>consultants</module>
+                                    <controller>create</controller>
+                                    <action>index</action>
+                                        <resource>consultants::create</resource>
+                                        <privilege>index</privilege> 
+                                </newauction>
+                                <edit-consultat>
+                                    <label>Editing Consultant Data</label>
+                                    <module>consultants</module>
+                                    <controller>update</controller>
+                                    <action>index</action>
+                                            <resource>consultants::update</resource>
+                                            <privilege>index</privilege> 
+                                </edit-consultat>
+                                <projects-search>
+                                    <label>Consultants Search Facility</label>
+                                    <module>search</module>
+                                    <controller>consultants</controller>
+                                    <action>index</action>
+                                        <resource>search::consultants</resource>
+                                        <privilege>index</privilege> 
+                                </projects-search>                                                                                                 
+                            </pages>                     
+            </auctionbuyers>
+            <projects>
+                <label>Projects</label>
+                <module>projects</module>
+                <controller>index</controller>
+                <action>index</action>
+                        <resource>projects::index</resource>
+                        <privilege>index</privilege> 
+                            <pages>
+                                <newauction>
+                                    <label>Project Details Entry Form</label>
+                                    <module>projects</module>
+                                    <controller>composition</controller>
+                                    <action>index</action>
+                                        <resource>projects::composition</resource>
+                                        <privilege>index</privilege> 
+                                </newauction>
+                                <project-composition-update>
+                                    <label>Project Details Update Entry Form</label>
+                                    <module>projects</module>
+                                    <controller>composition</controller>
+                                    <action>update</action>
+                                        <resource>projects::composition</resource>
+                                        <privilege>update</privilege> 
+                                </project-composition-update>                                
+                                <newproject>
+                                    <label>New Project Definition Entry Form</label>
+                                    <module>projects</module>
+                                    <controller>create</controller>
+                                    <action>index</action>
+                                        <resource>projects::create</resource>
+                                        <privilege>index</privilege> 
+                                </newproject>
+                                <editproject>
+                                    <label>Editing Project Definition Data</label>
+                                    <module>projects</module>
+                                    <controller>update</controller>
+                                    <action>index</action>
+                                        <resource>projects::update</resource>
+                                        <privilege>index</privilege> 
+                                </editproject>
+                                <projects-search>
+                                    <label>Projects Search Facility</label>
+                                    <module>search</module>
+                                    <controller>projects</controller>
+                                    <action>index</action>
+                                        <resource>search::projects</resource>
+                                        <privilege>index</privilege> 
+                                </projects-search>                                                                                                                                                                   
+                            </pages>                     
+            </projects>                         
+            <budgetmanager>
+                <label>Financial Year Budgets</label>
+                <module>budgets</module>
+                <controller>index</controller>
+                <action>index</action>
+                            <resource>budgets::index</resource>
+                            <privilege>index</privilege> 
+                            <pages>
+                                <newauction>
+                                    <label>New Financial Year Budget Entry Form</label>
+                                    <module>budgets</module>
+                                    <controller>create</controller>
+                                    <action>index</action>
+                <resource>budgets::create</resource>
+                <privilege>index</privilege> 
+                                </newauction>
+                                <editauction>
+                                    <label>Editing Financial Year Budget Data</label>
+                                    <module>budgets</module>
+                                    <controller>update</controller>
+                                    <action>index</action>
+                <resource>budgets::update</resource>
+                <privilege>index</privilege> 
+                                </editauction>
+                                <budgets-search>
+                                    <label>Financial Year Budgets Search Facility</label>
+                                    <module>search</module>
+                                    <controller>budgets</controller>
+                                    <action>index</action>
+                <resource>search::budgets</resource>
+                <privilege>index</privilege> 
+                                </budgets-search>                                                                                                 
+                            </pages>                     
+            </budgetmanager>
+            <usermanager>
+                <label>Users</label>
+                <module>users</module>
+                <controller>index</controller>
+                <action>index</action>
+                <resource>users::index</resource>
+                <privilege>index</privilege> 
+                            <pages>
+                                <newauction>
+                                    <label>New User Entry Form</label>
+                                    <module>users</module>
+                                    <controller>create</controller>
+                                    <action>index</action>
+                <resource>users::create</resource>
+                <privilege>index</privilege> 
+                                </newauction>
+                                <editauction>
+                                    <label>Editing User Data</label>
+                                    <module>users</module>
+                                    <controller>update</controller>
+                                    <action>index</action>
+                <resource>users::update</resource>
+                <privilege>index</privilege> 
+                                </editauction>                                                                
+                            </pages>                     
+            </usermanager>                                                                                                                                                                                                                                                                                                                                                                               
+        </pages>
+    </nav>
+</configdata>

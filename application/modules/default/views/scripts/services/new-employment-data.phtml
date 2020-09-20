@@ -1,0 +1,18 @@
+<?php
+    echo sprintf(   '<article class="employment-data" id="employment-data_%d">
+                            <section class="row">
+                                <div class="col-lg-3 phase">%s</div>
+                                <div class="col-lg-3 date-of-discussion">%s</div>
+                                <div class="col-lg-3 extension-from-date">%s</div>
+                                <div class="col-lg-3 remove">
+                                        <button onclick="BsspEmployment.remove(%d)" class="form-control btn btn_remove" type="button" id="btn_remove" name="btn_remove">Remove</button>
+                                </div>
+                            </section>                            
+                    </article>' , 
+
+                                $this->rowCount ,
+                                $this->form->employmentNumberOfMales ,
+                                $this->form->employmentNumberOfFemales , 
+                                $this->form->employmentDateOfEmployment,
+                                $this->rowCount
+                                );

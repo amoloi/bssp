@@ -1,0 +1,55 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <legend>Application Information</legend>
+                            <section class="row">
+                                <div class="col-lg-6">
+                                    <?php echo $this->form->id; ?>
+                                    <?php echo $this->form->promoter; ?>
+                                </div>
+                                <div class="col-lg-6">
+                                    <?php echo $this->form->newPromoter; ?>                                    
+                                </div>                                
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->businessName; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->businessSector; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->businessActivity; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->requestType; ?></div>
+                                <div class="col-lg-6"></div>
+                            </section>                            
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->telephoneNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->mobileNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->faxNumber; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->emailAddress; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->postalAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->residentialAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->region; ?></div>
+                            </section>                            
+                        </fieldset>                 
+              
+                <fieldset class="actions-wrap">
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save Application'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>    

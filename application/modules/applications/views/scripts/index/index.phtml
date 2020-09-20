@@ -1,0 +1,47 @@
+<section class="row">                   
+        <ul id="resources">
+            <li class="progression"><?php echo $this->partial('/partials/new-application.phtml',[]) ?></li>
+            
+            <?php if(count($this->paginator) > 0): ?>
+                <?php foreach ($this->paginator as $entityOnject): ?>
+                    <li class="resource" id="resource_pet">
+                        <div class="heading">
+                  <h2>
+                    <a href="#!/pet" onclick="Docs.toggleEndpointListForResource('pet');"><?php echo $this->escape($entityOnject['id']) ?></a>  : <?php echo $this->escape($entityOnject['businessName']) ?>
+                  </h2>
+                  <ul class="options">
+                    <li>
+                      <a href="<?php echo $this->escape($this->url(array('module'=>'projects','controller' => 'resolutions', 'action' => 'create' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>" onclick="Docs.collapseOperationsForResource('pet'); return false;">
+                        Committee Resolution
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo $this->escape($this->url(array('module'=>'applications','controller' => 'create', 'action' => 'delete' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>" onclick="Docs.expandOperationsForResource('pet'); return false;">
+                        Remove
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo $this->escape($this->url(array('module'=>'applications','controller' => 'update', 'action' => 'index' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>">Edit</a>
+                    </li>
+                  </ul>
+                </div>
+
+                </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li>  
+                    <section class="row">
+                        <div class="col-lg-12">
+                            <p class="text-info info">
+                                There are no applications records in the BSSP system at the moment, please use the "create new application" link on the right to create records .
+                            </p>
+                        </div>
+                    </section>
+                </li>
+            <?php endif; ?>  
+            <li class="progression"><?php echo $this->partial('/partials/new-application.phtml',[]) ?></li>    
+        </ul>   
+</section>
+<section>
+    <?php echo $this->paginationControl($this->paginator, 'Elastic', ['partials/pagination.phtml' , 'service']); ?>
+</section>

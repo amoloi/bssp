@@ -1,0 +1,50 @@
+<section class="row">
+    <div class="large-12 medium-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+          </div>
+          <div class="panel-body">                    
+                <div class="large-12 medium-12 columns">
+<div class="container" id="resources_container">
+        <ul id="resources">
+            <li class="progression"><?php echo $this->partial('/partials/new-auction.phtml',[]) ?></li>
+            <?php foreach ($this->paginator as $entityOnject): ?>
+        <li class="resource" id="resource_pet">
+            <div class="heading">
+      <h2>
+        <a href="#!/pet" onclick="Docs.toggleEndpointListForResource('pet');"><?php echo $this->escape($entityOnject['code']) ?></a>  : <?php echo $this->escape($entityOnject['title']) ?>
+      </h2>
+      <ul class="options">
+        <li>
+          <a href="#!/pet" id="endpointListTogger_pet" onclick="Docs.toggleEndpointListForResource('pet');">Show/Hide</a>
+        </li>
+        <li>
+          <a href="#" onclick="Docs.collapseOperationsForResource('pet'); return false;">
+            List Operations
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->escape($this->url(array('module'=>'auction','controller' => 'auctions', 'action' => 'delete' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>" onclick="Docs.expandOperationsForResource('pet'); return false;">
+            Remove
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->escape($this->url(array('module'=>'auction','controller' => 'auctions', 'action' => 'update' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>">Edit</a>
+        </li>
+      </ul>
+    </div>
+
+    </li>
+    <?php endforeach; ?>
+            <li class="progression"><?php echo $this->partial('/partials/new-auction.phtml',[]) ?></li>    
+        </ul>   
+</div>
+                </div>
+              <div class="large-12 medium-12 columns">
+              </div>
+              <div class="large-12 medium-12 columns text-right">              
+              </div>              
+        </div>
+    </div>
+    
+</section>

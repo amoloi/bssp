@@ -1,0 +1,43 @@
+<section class="row">                   
+        <ul id="resources">
+            <li class="progression"><?php echo $this->partial('/partials/new-consultant.phtml',[]) ?></li>
+            <?php foreach ($this->paginator as $entityOnject): ?>
+        <li class="resource" id="resource_pet">
+            <div class="heading">
+      <h2>
+        <?php switch ($this->escape($entityOnject['entityType'])): 
+    case 'company': ?>
+                    <a href="#!/pet" onclick="Docs.toggleEndpointListForResource('pet');"><?php echo $this->escape($entityOnject['id']) ?></a>  : <?php echo $this->escape($entityOnject['companyName'] . ' - ' . $entityOnject['companyRegistrationNumber']) ?>
+
+        <?php  break; ?>          
+        <?php  case 'individual': ?>
+        <?php  case 'consultant': ?>
+                     <a href="#!/pet" onclick="Docs.toggleEndpointListForResource('pet');"><?php echo $this->escape($entityOnject['id']) ?></a>  : <?php echo $this->escape($entityOnject['firstName'] . ' ' . $entityOnject['lastName']) ?>
+          <?php  break; ?>
+        <?php endswitch; ?>
+      </h2>
+      <ul class="options">
+        <li>
+          <a href="#!/pet" id="endpointListTogger_pet" onclick="Docs.toggleEndpointListForResource('pet');">Show/Hide</a>
+        </li>
+        <li>
+          <a href="#" onclick="Docs.collapseOperationsForResource('pet'); return false;">
+            List Operations
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'create', 'action' => 'delete' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>" onclick="Docs.expandOperationsForResource('pet'); return false;">
+            Remove
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'update', 'action' => 'index' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>">Edit</a>
+        </li>
+      </ul>
+    </div>
+
+    </li>
+    <?php endforeach; ?>
+            <li class="progression"><?php echo $this->partial('/partials/new-consultant.phtml',[]) ?></li>    
+        </ul>   
+</section>

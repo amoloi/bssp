@@ -1,0 +1,24 @@
+<?php
+    echo sprintf('<article class="request" id="request_%d">
+                    <section class="row" id="sect">
+                                <div class="col-lg-3 request-type request-staus">%s %s</div>
+                                <div class="col-lg-3 request-priority-sector">%s</div>
+                                <div class="col-lg-6 request-priority-activity">%s</div>
+                    </section>
+                    <section class="row" id="sect">
+                                <div class="col-lg-12 other-request-businessDesc">%s</div>
+                    </section>                    
+                    <section class="row" id="sect">
+                                <div class="col-lg-10 other-request-type-div">%s</div>
+                                <div class="col-lg-2 remove action">%s</div>
+                    </section>
+                  </article>' , 
+                                $this->form->getRowCount() ,
+                                $this->form->requestType ,
+                                $this->form->requestStatus ,
+                                $this->form->requestSector ,
+                                $this->form->requestPriotityArea ,
+                                
+                                $this->form->requestBusinessActivity,
+                                $this->form->otherRequestTypeText,
+                                $this->form->btn_remove);

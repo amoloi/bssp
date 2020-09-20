@@ -1,0 +1,67 @@
+
+<form action="" enctype="" method="">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <legend>Consultant Information</legend>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->element->entityType; ?></div>
+                                <div class="col-lg-6"><?php echo $this->element->entityCategory; ?></div>                                
+                            </section>
+                            <section id="individual-section">
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->element->firstName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->element->middleName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->element->lastName; ?></div>
+                                </section>                                
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->element->dateOfBirth; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->element->identityNumber; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->element->passportNumber; ?></div>
+                                </section>
+                            </section>
+                            <section id="company-section">
+                                <section id="company" class="row">
+                                    <div class="col-lg-6"><?php echo $this->element->companyName; ?></div>
+                                    <div class="col-lg-6"><?php echo $this->element->companyRegistrationNumber; ?></div>
+                                </section>
+                            </section>                          
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->element->telephoneNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->element->mobileNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->element->faxNumber; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->element->emailAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->element->residentialAddress; ?></div>
+                            </section>                           
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Address Details</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->element->addressLineOne; ?></div>
+                                <div class="col-lg-4"><?php echo $this->element->addressLineTwo; ?></div>
+                                <div class="col-lg-4"><?php echo $this->element->postalAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->element->countryCode; ?></div>
+                                <div class="col-lg-4"><?php echo $this->element->regionCode; ?></div>
+                                <div class="col-lg-4"><?php echo $this->element->cityCode; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->element->residentialAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->element->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->element->region; ?></div>
+                            </section>                            
+                        </fieldset>               
+
+                </div> 
+
+</form>    

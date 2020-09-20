@@ -1,0 +1,32 @@
+<?php
+    echo sprintf('<fieldset>
+                        <legend>Master Budget Information</legend>
+                            <section class="row m-budget" id="">
+                                <div class="col-lg-6 master-budget-number">%s</div>
+                                <div class="col-lg-6">%s</div>
+                            </section>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Project Budget Information</legend>
+                            <section class="row instalment">
+                                <div class="col-lg-8 budget-name">%s</div>
+                                <div class="col-lg-4 "></div>
+                            </section>
+                            <section class="row instalment">
+                                <div class="col-lg-4 budget-amount">%s</div>
+                                <div class="col-lg-4 budget-date-of-approval">%s</div>
+                                <div class="col-lg-4 budget-outstanding-amount">%s</div>
+                            </section>                            
+                            <section class="row extension">
+                                <div class="col-lg-12 budget-remarks">%s</div>
+                            </section>                            
+                    </fieldset>' , 
+                                $this->form->masterBudgetNumber,
+                                $this->form->projectNumber,
+                                $this->form->budgetName ,
+                                $this->form->budgetAmount ,
+                                $this->form->budgetDateOfApproval,
+                                $this->form->budgetOutstandingAmount,                               
+                                $this->form->budgetRemarks
+                                
+                                );

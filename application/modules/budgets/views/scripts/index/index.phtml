@@ -1,0 +1,93 @@
+<form class="search-form" method="post" action="/search/budgets/">
+<?php echo $this->partial('/partials/new-budget.phtml',[]) ?>
+<section>
+      <?php if(count($this->paginator) > 0): ?>
+    <div class="table">
+    <div class="row header blue">
+      <div class="cell">
+        Budget Name
+      </div>
+      <div class="cell">
+        Budget Code
+      </div>
+      <div class="cell">
+        Budget Period
+      </div>
+      <div class="cell">
+        Budget Amount
+      </div>
+      <div class="cell">
+        Committed Amount
+      </div>
+      <div class="cell">
+        Amount Left
+      </div>        
+      <div class="cell"></div>         
+    </div>
+<!--    <div class="row search-row">
+      <div class="cell">
+        <?php echo $this->form->budgetName ?>
+      </div>
+      <div class="cell">
+        <?php echo $this->form->budgetCode ?>
+      </div>
+      <div class="cell">
+        <?php echo $this->form->budgetPeriod ?>
+      </div>
+      <div class="cell">
+        <?php echo $this->form->budgetAmount ?>
+      </div>
+        <div class="cell">
+                <dd id="btnSubmit-element">
+                    <button class="btn btn-block btn-success" type="submit" id="btnSubmit" name="btnSubmit"><i class="fa fa-search"></i> Search</button>
+                </dd>            
+        </div>
+      <div class="cell">
+
+      </div>        
+    </div>        -->
+                            <?php $count = 1 ; foreach ($this->paginator as $entityOnject): ?>
+
+                <div class="row">
+                  <div class="cell">
+                    <span class="text-info"><?php echo $this->escape($count) ?></span>  : <?php echo $this->escape($entityOnject['name']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['code']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['period']) ?>
+                  </div>
+                  <div class="cell">
+                    $<?php echo $this->escape($entityOnject['masterBudgetAmount']) ?>
+                  </div>
+                  <div class="cell">
+                    $<?php echo $this->escape($entityOnject['committedAmount']) ?>
+                  </div>
+                  <div class="cell">
+                    $<?php echo $this->escape($entityOnject['balanceAmount']) ?>
+                  </div>                    
+                    <div class="cell action text-right">
+                                    <a href="<?php echo $this->escape($this->url(array('module'=>'budgets','controller' => 'update', 'action' => 'index' , 'id'=> $this->escape($entityOnject['id'])), null, true)) ?>">
+                                        Edit Budget
+                                    </a> 
+                    </div>                   
+                </div>                               
+                    <?php $count++; endforeach; ?> 
+  </div>
+</section>
+                    <?php else: ?>
+                        <section class="row">
+                            <div class="info-wrap">
+                                <p class="text-info info">
+                                    There are no budgets records in the BSSP system at the moment, please use the "create new budget" link on the right to create records .
+                                </p>
+                            </div>
+                        </section>                            
+                    <?php endif; ?>          
+
+<?php echo $this->partial('/partials/new-budget.phtml',[]) ?>
+<section>
+    <?php echo $this->paginationControl($this->paginator, 'Elastic', ['partials/pagination.phtml' , 'service']); ?>
+</section>
+</form>

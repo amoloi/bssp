@@ -1,0 +1,94 @@
+<?php echo $this->partial('/partials/new-promoter.phtml',[]) ?>
+<form class="search-form" method="post" action="/search/applications/">
+<section>
+  
+      <?php if(count($this->paginator) > 0): ?>
+    <div class="table">
+    <div class="row header blue">
+      <div class="cell">
+        Application Number
+      </div>
+      <div class="cell">
+        Applicant Name
+      </div>
+      <div class="cell">
+        Date of Application
+      </div>        
+      <div class="cell">
+        Request Type
+      </div>
+      <div class="cell">
+        Request Status
+      </div>
+      <div class="cell"></div>         
+    </div>
+                <div class="row search-row">
+
+                        <div class="cell">
+                          <?php echo $this->form->applicationNumber ?>
+                        </div>
+                        <div class="cell">
+                          <?php echo $this->form->applicantName ?>
+                        </div>
+                        <div class="cell">
+                          <?php echo $this->form->applicationDate ?>
+                        </div>
+                        <div class="cell">
+                          <?php  echo $this->form->requestType ?>
+                        </div>
+                        <div class="cell ">
+                          <?php echo $this->form->requestStatus ?>
+                        </div>
+                        <div class="cell action text-right">
+                            <button class="btn btn-block btn-success" type="submit" id="btnSubmit" name="btnSubmit"><i class="fa fa-search"></i> Search</button>
+                        </div>        
+                </div>         
+                            <?php $count = 1 ; foreach ($this->paginator as $entityOnject): ?>
+
+                <div class="row">
+                    <div class="cell">
+                        <span class="text-info"><?php echo $this->escape($count) ?></span>  : <?php echo $this->escape($entityOnject['applicationNumber']) ?>
+                    </div>
+                    <div class="cell">
+                        <?php echo $this->escape($entityOnject['applicantName']) ?>
+                    </div>
+                    <div class="cell">
+                        <?php echo $this->escape($entityOnject['applicationDate']) ?>
+                    </div>
+                    <div class="cell">
+                        <?php echo $this->escape($entityOnject['requestType'])  ?>
+                    </div>
+                    <div class="cell status-<?php echo strtolower($this->escape($entityOnject['requestStatus'])) ?>">
+                        <?php echo $this->escape($entityOnject['requestStatus']) ?>
+                    </div>
+                    <div class="cell action text-right">
+                        <?php if('APPROVED' === $this->escape($entityOnject['requestStatus'])): ?>
+                                    <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'request-details', 'action' => 'index' , 'rn'=> $this->escape($entityOnject['requestNumber'])), null, true)) ?>" onclick="">
+                                      View Request Details
+                                    </a>
+                                    <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'details', 'action' => 'index' , 'an'=> $this->escape($entityOnject['applicationNumber'])), null, true)) ?>" onclick="">
+                                     View Application Details
+                                    </a>                                                                                         
+                        <?php else: ?>                                   
+                                    <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'update', 'action' => 'index' , 'an'=> $this->escape($entityOnject['applicationNumber'])), null, true)) ?>">Edit Application</a>                   
+                        <?php endif; ?> 
+                    </div>                   
+                </div>                               
+                    <?php $count++; endforeach; ?>
+          </div> 
+                    <?php else: ?>
+                        <section class="row">
+                            <div class="info-wrap">
+                                <p class="text-info info">
+                                    There are no applications records in the BSSP system at the moment, please use the "create new application" link on the right to create records .
+                                </p>
+                            </div>
+                        </section>                            
+                    <?php endif; ?>       
+   
+</section>
+<?php echo $this->partial('/partials/new-promoter.phtml',[]) ?>
+<section>
+    <?php echo $this->paginationControl($this->paginator, 'Elastic', ['partials/pagination.phtml' , 'service']); ?>
+</section>
+    </form>

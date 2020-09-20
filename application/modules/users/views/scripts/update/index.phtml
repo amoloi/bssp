@@ -1,0 +1,37 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->id; ?></div>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <legend>User`s Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->firstname; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->lastname; ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                            </section>                            
+                            <section class="row">
+                                <div class="col-lg-8"><?php echo $this->form->email; ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                            </section>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->username; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->password; ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                            </section>  
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->role; ?></div>
+                                <div class="col-lg-6"><?php ?></div>
+                            </section>                             
+                        </fieldset>                               
+                <fieldset class="actions-wrap">
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Update User Info'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+</form>    

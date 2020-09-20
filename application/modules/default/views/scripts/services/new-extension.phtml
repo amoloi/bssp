@@ -1,0 +1,25 @@
+<?php
+    echo sprintf(   '<article class="extension" id="extension_%d">
+                            <section class="row">
+                                <div class="col-lg-3 phase">%s %s</div>
+                                <div class="col-lg-3 date-of-discussion">%s</div>
+                                <div class="col-lg-3 extension-from-date">%s</div>
+                                <div class="col-lg-3 extension-to-date">%s</div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-9 extension-remarks">%s</div>
+                                <div class="col-lg-3 remove">
+                                        <button onclick="BsspExtension.remove(%d)" class="form-control btn btn_remove" type="button" id="btn_remove" name="btn_remove">Remove</button>
+                                </div>
+                            </section>                            
+                    </article>' , 
+
+                                $this->rowCount ,            
+                                $this->form->extensionCount ,
+                                $this->form->assignmentExtensionPhase ,
+                                $this->form->assignmentExtensionDiscussionDate , 
+                                $this->form->assignmentExtendedFromDate,
+                                $this->form->assignmentExtendedToDate,
+                                $this->form->assignmentExtensionRemarks,
+                                $this->rowCount
+                                );

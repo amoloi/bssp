@@ -1,0 +1,58 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+    <section class="contents">
+          <div class="panel-heading">
+          </div>                
+            <div class="large-12 medium-12 columns">
+<section id="tabs-wrap" class="tabs-wrap">
+
+<div class="contents marginbot">
+            <div class="" id="content2" >
+                        <fieldset>
+                            <section class="row">
+                                <div class="col-lg-4">
+                                    <ul>
+                                        <li><?php echo $this->form->id; ?></li>
+                                        <li><?php echo $this->form->promoter; ?></li>
+                                        <li><?php echo $this->form->businessName; ?></li>
+                                        <li><?php echo $this->form->businessSector; ?></li>
+                                        <li><?php echo $this->form->businessActivity; ?></li>
+                                        <li><?php echo $this->form->requestType; ?></li>
+                                    </ul>                                    
+                                </div>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->telephoneNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->mobileNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->faxNumber; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->emailAddress; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->postalAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->residentialAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->region; ?></div>
+                            </section>                            
+                        </fieldset>                 
+            </div>   
+</div>
+</section>
+            </div>
+            <div class="large-12 medium-12 columns">
+                <fieldset class="actions-wrap">
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save Application'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>                 
+            </div>
+
+            <div class="col-lg-12 text-right"></div> 
+        </section>
+</form>    

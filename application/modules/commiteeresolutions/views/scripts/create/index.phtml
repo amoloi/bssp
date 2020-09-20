@@ -1,0 +1,130 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" 
+      class="<?php echo $this->escape($this->form->getAttrib('class')) ?>" 
+      enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>"
+      onsubmit="return confirm('Are you sure you want to save this request resolution ?');">
+
+            <div class="frm-contents" id="content" >
+                <section class="row">
+                    <div class="col-lg-6">
+                        <fieldset>
+                            <legend>Application Information</legend>
+                            <section class="row text-info">
+                                <table class="auto-width">
+                                    <tbody>
+                                        <tr>
+                                            <td>Applicant Name </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['applicantName']); ?></strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Application Number </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['applicationNumber']); ?></strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date of Application </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['applicationDate']); ?></strong></td>
+                                        </tr>                                                                             
+                                    </tbody>
+                                </table>                                    
+                            </section>                                                        
+                            <section class="row text-info">
+                                <div class="col-lg-3"><?php echo $this->form->requestNumber; ?><?php echo $this->form->requestId; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->applicationNumber; ?><?php echo $this->form->applicationId; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->id; ?></div>
+                            </section>                                                     
+                        </fieldset>                         
+                    </div>
+                    <div class="col-lg-6">
+                        <fieldset>
+                            <legend>Request Information</legend>
+                            <section class="row text-info">
+                                <table class="auto-width">
+                                    <tbody>                                   
+                                        <tr>
+                                            <td>Request Type </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['requestType']); ?></strong></td>
+                                        </tr>
+                                        <?php if('Other' === $this->escape($this->request['requestType'])): ?>
+                                        <tr>
+                                            <td>Other Request Type Text</td>
+                                            <td class="text-warning">&colon;&nbsp;<strong><?php echo $this->escape($this->request['otherRequestTypeText']); ?></strong></td>
+                                        </tr>                                        
+                                        <?php endif;?>
+                                        <?php ?>
+                                        <tr>
+                                            <td>Request Priority Area </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['requestPriotityArea']); ?></strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Request Status </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['requestStatus']); ?></strong></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Request Number </td>
+                                            <td>&colon;&nbsp;<strong><?php echo $this->escape($this->request['requestNumber']); ?></strong></td>
+                                        </tr>                                          
+                                    </tbody>
+                                </table>                                    
+                            </section>                                                                                                            
+                        </fieldset>                         
+                    </div>
+                </section>                 
+                        <fieldset>
+                            <legend>Resolution Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-3"><?php echo $this->form->resolutionDiscussionDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->resolutionCorespondenceDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->resolutionDiscussionStatus; ?></div>
+                                <div class="col-lg-3"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->resolutionRemarks; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->resolutionRemarksDescription; ?></div>
+                            </section>                                                        
+                        </fieldset>
+                        <fieldset id="project-info">
+                            <legend>Project Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-9"><?php echo $this->form->project->projectName; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->project->projectStatus; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->project->projectDescription; ?></div>
+                            </section>                            
+                            <section class="row">
+                                <div class="col-lg-3"><?php ?></div>
+                                <div class="col-lg-3"><?php ?></div>
+                                <div class="col-lg-3"><?php ?></div>
+                                <div class="col-lg-3"></div>
+                            </section>                            
+                        </fieldset>                
+                <fieldset class="actions-wrap">                   
+                    <ul id="actions">
+                        
+                        <li><?php echo $this->form->btnSaveProject; ?></li>
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save resolution details'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="danger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-danger">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h1><i class="glyphicon glyphicon-thumbs-up"></i> Danger Modal</h1>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Modal -->

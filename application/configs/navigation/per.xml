@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+    <nav>
+        <label>Home</label>
+        <controller>index</controller>
+        <action>index</action>
+                <resource>default:index</resource>
+                <privilege>index</privilege>        
+        <pages>
+            <employers>
+                <label>Employee`s Section</label>
+                <module>employee</module>
+                <controller>index</controller>
+                <action>index</action>
+                            <resource></resource>
+                            <privilege></privilege>
+                            <pages>
+                                <newemployer>
+                                    <label>New Employee Registration</label>
+                                    <module>employee</module>
+                                    <controller>registration</controller>
+                                    <action>index</action>
+                                        <resource></resource>
+                                        <privilege></privilege>
+                                </newemployer>
+                                <employeremployees>
+                                    <label>My Dependents</label>
+                                    <module>employee</module>
+                                    <controller>dependents</controller>
+                                    <action>index</action>
+                                                <resource></resource>
+                                                <privilege></privilege>                 
+                                </employeremployees>
+                                <newemployeremployees>
+                                    <label>New Employee</label>
+                                    <module>employer</module>
+                                    <controller>employees</controller>
+                                    <action>create</action>
+                                                <resource></resource>
+                                                <privilege></privilege>                 
+                                </newemployeremployees>
+                                <claims>
+                                    <label>My Claims</label>
+                                    <module>employee</module>
+                                    <controller>claims</controller>
+                                    <action>index</action>
+                                        <resource>employee:claims</resource>
+                                        <privilege>index</privilege>
+                                        <pages>
+                                            <newclaim>
+                                                <label>New Claim</label>
+                                                <module>employee</module>
+                                                <controller>claims</controller>
+                                                <action>create</action>
+                                                    <resource></resource>
+                                                    <privilege></privilege>
+                                            </newclaim>                                             
+                                        </pages>
+                                </claims>                                
+                                                                                                                               
+                            </pages>                 
+            </employers>
+            <employees>
+                <label>My Dependents</label>
+                <module>employee</module>
+                <controller>dependents</controller>
+                <action>index</action>
+                            <resource></resource>
+                            <privilege></privilege>
+                            <pages>
+                                <newdependent>
+                                    <label>New Dependent</label>
+                                    <module>employee</module>
+                                    <controller>dependents</controller>
+                                    <action>create</action>
+                                        <resource></resource>
+                                        <privilege></privilege>
+                                </newdependent>                                
+                            </pages>                 
+            </employees>            
+                                          
+            <claims>
+                <label>My Claims</label>
+                <module>employee</module>
+                <controller>claims</controller>
+                <action>index</action>
+                    <resource></resource>
+                    <privilege></privilege>
+            </claims>
+                            
+            <login>
+                <label>Login</label>
+                <module>login</module>
+                <controller>index</controller>
+                <action>index</action>
+                    <resource>login:index</resource>
+                    <privilege>index</privilege>                                 
+            </login>
+            <logout>
+                <label>Logout</label>
+                <module>login</module>
+                <controller>logout</controller>
+                <action>index</action>
+                    <resource>login:logout</resource>
+                    <privilege>index</privilege>                                
+            </logout>                                                       
+        </pages>
+    </nav>
+</configdata>

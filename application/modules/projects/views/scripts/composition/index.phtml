@@ -1,0 +1,282 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" class="<?php echo $this->escape($this->form->getAttrib('class')) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                <div class="row">
+                    <section class="col-lg-6">
+                        <fieldset>
+                            <legend>Application And Request Information<?php echo $this->form->applicationId; ?></legend>
+                            <section class="row text-info">
+                                    <table class="auto-width">
+                                        <tbody>
+                                            <tr>
+                                                <td>Applicant Name </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->form->applicantName->getValue(); ?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Application Number </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->form->applicationNumber->getValue(); ?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date of Application </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['applicationDate']; ?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date of Acknowledgment </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['applicationAcknowledgementDate']; ?></strong></td>
+                                            </tr>                                            
+                                            
+                                            <tr>
+                                                <td>Request Type </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['requestType']; ?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Request Priority Area </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['requestPriotityArea']; ?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Request Status </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['requestStatus']; ?></strong></td>
+                                            </tr>
+                                            <td>Request Number </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['requestNumber']; ?></strong></td>
+                                            </tr>                                          
+                                        </tbody>
+                                    </table>                                     
+                            </section>                                                        
+                            <section class="row text-info">
+                                <div class="col-lg-3"><?php echo $this->form->projectId; ?><?php echo $this->form->requestId; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->projectNumber; ?><?php echo $this->form->applicationNumber; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->id; ?><?php echo $this->form->requestNumber; ?></div>
+                            </section>                                                     
+                        </fieldset>                         
+                    </section>
+                    <section class="col-lg-6">
+                        <fieldset>
+                            <legend>Project Information<?php echo $this->form->applicationId; ?></legend>
+                            <section class="row text-info">
+                                    <table class="auto-width">
+                                        <tbody>
+                                            <tr>
+                                                <td>Project Name </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['projectName']; ?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Project Number </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['projectNumber']; ?></strong></td>
+                                            </tr>                                   
+                                            <tr>
+                                                <td>Project Status </td>
+                                                <td>&colon;&nbsp;<strong><?php echo $this->request['projectStatus']; ?></strong></td>
+                                            </tr>                                       
+                                        </tbody>
+                                    </table>                                     
+                            </section>                                                        
+                            <section class="row text-info">
+                                <div class="col-lg-3"><?php echo $this->form->projectId; ?><?php echo $this->form->requestId; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->projectNumber; ?><?php echo $this->form->applicationNumber; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->id; ?><?php echo $this->form->requestNumber; ?></div>
+                            </section>                                                     
+                        </fieldset>                         
+                    </section>
+                </div>
+                        <fieldset>
+                            <legend>Memorandum of Understanding Information</legend>
+                            <section class="row">
+                                <div class="col-lg-12 consultant-notice text-center" id="consultant-notice"></div>
+                            </section>                             
+                            <section class="row">
+                                <div class="col-lg-3"><?php echo $this->form->mou->signedDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->mou->completionDate; ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                            </section>                            
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Project Consultancy Information</legend>
+                            <section class="row">
+                                <div class="col-lg-12 consultant-notice text-center" id="consultant-notice"></div>
+                            </section>                             
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->consultantId; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->principleConsultant; ?></div>
+                                <div class="col-lg-2 text-right"><?php echo $this->form->newConsultant; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-9 consultant-notice text-center" id="consultant-loading-status"></div>
+                                <div class="col-lg-3 text-right"></div>
+                            </section>                             
+                        </fieldset>
+                        <fieldset>        
+                            <legend>Project Finance Information</legend>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->project_budget->masterBudgetNumber; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->project_budget->budgetAmount; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->project_budget->budgetDateOfApproval; ?></div>
+                            </section>                           
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Payments Information</legend>
+                            <?php if(count($this->data['phase']) === 0): ?>                                                     
+                            <?php else: ?>
+                                <?php for($i = 0 ; $i < count($this->data['phase']) ; $i++): ?>
+                                    <section id="sect_<?php echo $i ?>" class="row instalment">
+                                        <div class="col-lg-3"><?php echo $this->form->getElement('phase')->setValue($this->escape($this->data['phase'][$i])); ?></div>
+                                        <div class="col-lg-3"><?php echo $this->form->getElement('instalmentAmount')->setValue($this->escape($this->data['instalmentAmount'][$i])); ?></div>
+                                        <div class="col-lg-3"><?php echo $this->form->getElement('instalmentDate')->setValue($this->escape($this->data['instalmentDate'][$i])); ?></div>
+                                        <div class="col-lg-3">
+                                            <dt id="button-label"><label class="optional" for="btn_remove">Actions</label></dt>
+                                            <dd><button onclick="bssp.removeRow(this.id)" class="form-control btn" type="button" id="remove_<?php echo $i ?>" name="btn_remove">Remove</button></dd>
+                                        </div>
+                                    </section> 
+                                <?php endfor; ?>
+                                
+                            <?php endif; ?>                              
+
+                            <section class="" id="dynamic-form-wrapper">
+                                
+                            </section>                           
+                            <section class="row">
+                                <div class="col-lg-9 loading-status text-center" id="installment-loading-status"></div>
+                                <div class="col-lg-3 text-right"><?php echo $this->form->newInstalment; ?></div>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Assignment Extension Information</legend>
+                            
+                         <?php if(count($this->data['assignmentExtensionPhase']) === 0): ?>                                                     
+                            <?php else: ?>
+                                <?php for($i = 0 ; $i < count($this->data['assignmentExtensionPhase']) ; $i++): ?>
+                                    <article class="extension" id="extension_<?php echo $i ?>">
+                                        <section class="row">
+                                            <div class="col-lg-3"><?php echo $this->form->extensions->assignmentExtensionPhase->setValue($this->escape($this->data['assignmentExtensionPhase'][$i])); ?></div>
+                                            <div class="col-lg-3"><?php echo $this->form->extensions->assignmentExtensionDiscussionDate->setValue($this->escape($this->data['assignmentExtensionDiscussionDate'][$i])); ?></div>
+                                            <div class="col-lg-3"><?php echo $this->form->extensions->assignmentExtendedFromDate->setValue($this->escape($this->data['assignmentExtendedFromDate'][$i])); ?></div>
+                                            <div class="col-lg-3"><?php echo $this->form->extensions->assignmentExtendedToDate->setValue($this->escape($this->data['assignmentExtendedToDate'][$i])); ?></div>                                    
+                                        </section>
+                                        <section class="row">
+                                            <div class="col-lg-9"><?php echo $this->form->extensions->assignmentExtensionRemarks->setValue($this->escape($this->data['assignmentExtensionRemarks'][$i])); ?></div>
+                                            <div class="col-lg-3 remove">
+                                                <dd><button class="form-control btn btn_remove" type="button" id="remove_<?php echo $i ?>" onclick="BsspExtension.remove(<?php echo $i ?>)" name="btn_remove">Remove</button></dd>
+                                            </div>
+                                        </section>                                 
+                                    </article>
+                                <?php endfor; ?>                                
+                            <?php endif; ?>                            
+                            <div class="extension-container" id="extension-container">
+                               
+                            </div>
+
+                            <section class="row">
+                                <div class="col-lg-9 text-center loading-status" id="extension-loading-status"></div>
+                                <div class="col-lg-3 text-right"><?php echo $this->form->newExtension; ?></div>
+                            </section>                             
+                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Implementation Status Information</legend>
+                            
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->includeImplementationReport; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>
+                            <article id="immplementationStatus">
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->form->implementationDateOfIssueToPromoters; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->implementationReportType->setValue($this->escape($this->request['requestType'])); ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->implementationSourceOfFunds; ?></div>
+                                </section>
+                                <section class="row">
+                                    <div class="col-lg-12"><?php echo $this->form->implementationRemarks; ?></div>
+                                </section>                                 
+                            </article>                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Overall Project Employment Creation Information</legend>
+                            
+                         <?php if(count($this->data['employmentNumberOfMales']) === 0): ?>                                                  
+                            <?php else: ?>
+                                <?php for($i = 0 ; $i < count($this->data['employmentNumberOfMales']) ; $i++): ?>
+                                    <article class="employment-data" id="employment-data_<?php echo $i ?>">
+                                        <section class="row">
+                                            <div class="col-lg-3"><?php echo $this->form->employmentNumberOfMales->setValue($this->escape($this->data['employmentNumberOfMales'][$i])); ?></div>
+                                            <div class="col-lg-3"><?php echo $this->form->employmentNumberOfFemales->setValue($this->escape($this->data['employmentNumberOfFemales'][$i])); ?></div>
+                                            <div class="col-lg-3"><?php echo $this->form->employmentDateOfEmployment->setValue($this->escape($this->data['employmentDateOfEmployment'][$i])); ?></div>
+                                            <div class="col-lg-3 remove">
+                                                <button name="btn_remove" id="btn_remove" type="button" class="form-control btn btn_remove" onclick="BsspEmployment.remove(<?php echo $i ?>)">Remove</button>
+                                            </div>
+                                        </section>                                 
+                                    </article>
+                                <?php endfor; ?>                                
+                            <?php endif; ?>  
+                            <div class="employment-creation-container" id="employment-creation-container">
+                               
+                            </div>
+
+                            <section class="row">
+                                <div class="col-lg-9 text-center loading-status" id="employment-creation-loading-status"></div>
+                                <div class="col-lg-3 text-right"><?php echo $this->form->newEmployment; ?></div>
+                            </section>                             
+                        </fieldset>                  
+                        <fieldset class="actions-wrap">                   
+                            <ul id="actions">
+                                <li><?php echo $this->form->btnSubmit->setLabel('Save Project Resolution'); ?></li>
+                                <li><?php echo $this->form->btnReset; ?></li>
+                            </ul>
+                        </fieldset>
+                </div> 
+
+</form>
+
+     <!-- Modal -->
+		<div id="modal-project-budget" class="modal" style="display:none;">
+			<section class="container">
+				<div class="col-md-12">
+                                    <form name="Jblacform" id="project-budget" enctype="multipart/form-data" action="/departments/new" method="post" novalidate="novalidate">
+						<div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                        <h3 class="panel-title">Creating a new project budget.</h3>
+                                                </div>
+                                                    <div class="panel-body" id="modal-project-budget-body">
+                                                            <div class="frm-contents" >
+
+                                                            </div>                                                         
+                                                        <fieldset class="form-action-buttons">                          
+                                                            <section class="row">
+                                                                <div class="col-lg-4"></div>
+                                                                <div class="col-lg-4"><button type="submit" id="save-budget" class="btn btn-block btn-primary">Save Project Budget</button></div>
+                                                                <div class="col-lg-4"><button type="button" id="cancel-budget" class="modal-close btn btn-block btn-default">Cancel</button></div>
+                                                            </section>                              
+                                                        </fieldset>                                                        
+                                                    </div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+    <!-- Modal -->
+    <!-- Modal -->
+		<div id="modal-project-consultant" class="modal" style="display:none;">
+			<section class="container">
+				<div class="col-md-12">
+                                    <form name="Jblacform" id="project-consultant" enctype="multipart/form-data" action="" method="post" novalidate="novalidate">
+						<div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                        <h3 class="panel-title">Creating a new project consultant.</h3>
+                                                </div>
+                                                    <div class="panel-body" id="modal-project-consultant-body">
+                                                            <div class="frm-contents" >
+
+                                                            </div>                                                         
+                                                        <fieldset class="form-action-buttons">                          
+                                                            <section class="row">
+                                                                <div class="col-lg-4"></div>
+                                                                <div class="col-lg-4"><button type="submit" id="save-budget" class="btn btn-block btn-primary">Save Project Consultant</button></div>
+                                                                <div class="col-lg-4"><button type="button" id="cancel" class="modal-close btn btn-block btn-default">Cancel</button></div>
+                                                            </section>                              
+                                                        </fieldset>                                                        
+                                                    </div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+    <!-- Modal -->

@@ -1,0 +1,178 @@
+<section class="row">
+ 
+</section>
+<section>
+          <div id="request-accordion" class="accordion">
+            <h3 class="expand">Application Details</h3>
+            <div class="collapse">
+                <ul>
+                    <li><span class="text-thick">Application Number</span> : <?php echo $this->escape($this->application['applicationNumber']) ?></li>
+                    <li><span class="text-thick">Application Date</span> : <?php echo $this->escape($this->application['applicationDate']) ?></li>
+                    <li><span class="text-thick">Application Aknowledgement Date</span> : <?php echo $this->escape($this->application['applicationAcknowledgementDate']) ?></li>
+                </ul>
+            </div>               
+            <h3 class="expand">Applicant Details</h3>
+            <div class="collapse">
+                        <?php if('company' === $this->escape($this->application['entityType'])): ?>
+                            <ul>
+                                    <li><span class="text-thick">Company Name</span> : <?php echo $this->escape($this->application['companyName']) ?></li>
+                                    <li><span class="text-thick">Company Registration Name</span> : <?php echo $this->escape($this->application['companyRegistrationNumber']) ?></li>                         
+                            </ul>                                                
+                        <?php else: ?>
+                    <ul>
+                            <li><span class="text-thick">First Name</span> : <?php echo $this->escape($this->application['firstName']) ?></li>
+                            <li><span class="text-thick">Middle Name</span> : <?php echo $this->escape($this->application['middleName']) ?></li>
+                            <li><span class="text-thick">Last Name</span> : <?php echo $this->escape($this->application['lastName']) ?></li>                            
+                            <li><span class="text-thick">Date of Birth</span> : <?php echo $this->escape($this->application['dateOfBirth']) ?></li>
+                            <li><span class="text-thick">Identity Number</span> : <?php echo $this->escape($this->application['identityNumber']) ?></li>
+                            <li><span class="text-thick">Passport Number</span> : <?php echo $this->escape($this->application['passportNumber']) ?></li>                         
+                    </ul>
+               
+                        <?php endif; ?>
+                
+                    <ul>
+                    <li>
+                            <div class="table">
+                              <div class="row header blue">
+                                <div class="cell">
+                                  Telephone Number
+                                </div>
+                                <div class="cell">
+                                  Mobile Number
+                                </div>
+                                <div class="cell">
+                                  Fax Number
+                                </div>
+                                <div class="cell">
+                                  E-mail Address
+                                </div>      
+                            </div>
+                            <div class="row">
+                                <div class="cell">
+                                  <?php echo $this->escape($this->application['telephoneNumber']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->application['mobileNumber']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->application['faxNumber']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->application['emailAddress']) ?>
+                                </div>                 
+                              </div>                                                            
+                            </div>                         
+                    </li>                        
+                    </ul>
+                    <ul>
+                    <li>
+                            <div class="table">
+                              <div class="row header blue">
+                                <div class="cell">
+                                  Address Line One
+                                </div>
+                                <div class="cell">
+                                  Address Line Two
+                                </div>
+                                <div class="cell">
+                                  Postal Address
+                                </div>
+                                <div class="cell">
+                                  Region
+                                </div>
+                                <div class="cell">
+                                  City
+                                </div>
+                                <div class="cell">
+                                  Constituency
+                                </div>
+                                <div class="cell">
+                                  Country
+                                </div>                                  
+                            </div>
+                            <div class="row">
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['addressLineOne']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['addressLineTwo']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['postalAddress']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['regionCode']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['cityCode']) ?>
+                                </div> 
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['constituencyCode']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($this->address['countryCode']) ?>
+                                </div>                                 
+                              </div>                                                            
+                            </div>                         
+                    </li>                        
+                    </ul>                
+            </div>               
+            <h3 class="expand">Requests Details</h3>
+            <div class="collapse shown">
+                <div class="table">
+                <?php if(0 < count($this->requests)): ?>
+                              <div class="row header blue">
+                                <div class="cell">
+                                  Request Number
+                                </div>
+                                <div class="cell">
+                                  Request Type
+                                </div>
+                                <div class="cell">
+                                  Request Priority Area
+                                </div>
+                                <div class="cell">
+                                  Request Priority Business Activity
+                                </div>
+                                <div class="cell">
+                                  Request Status
+                                </div>                                  
+                            </div>                    
+                <?php foreach($this->requests as $request): ?>
+                            <div class="row">
+                                <div class="cell">
+                                  <?php echo $this->escape($request['requestNumber']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($request['requestType']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($request['requestPriotityArea']) ?>
+                                </div>
+                                <div class="cell">
+                                  <?php echo $this->escape($request['requestBusinessActivity']) ?>
+                                </div>
+                                <div class="cell status-<?php echo strtolower($this->escape($request['requestStatus'])) ?>">
+                                  <?php echo $this->escape($request['requestStatus']) ?>
+                                </div>                                 
+                              </div>                     
+                <?php endforeach; ?>
+                
+                
+                <?php endif; ?>
+                    </div>
+            </div>
+                <?php if('company' === $this->escape($this->application['entityType'])): ?>
+                    <h3 class="expand">Contact Person Details</h3>
+                    <div class="collapse">
+                            <ul>
+                                    <li><span class="text-thick">Contact Title</span> : <?php echo $this->escape($this->contact ['contactTitle']) ?></li>    
+                                    <li><span class="text-thick">Contact First Name</span> : <?php echo $this->escape($this->contact ['contactFirstName']) ?></li>
+                                    <li><span class="text-thick">Contact Middle Name</span> : <?php echo $this->escape($this->contact ['contactMiddleName']) ?></li>
+                                    <li><span class="text-thick">Contact Last Name</span> : <?php echo $this->escape($this->contact ['contactLastName']) ?></li>                            
+                                    <li><span class="text-thick">Contact Position</span> : <?php echo $this->escape($this->contact ['contactPosition']) ?></li>                      
+                            </ul>
+                    </div>                                                
+                <?php endif; ?>                               
+          </div>
+</section>

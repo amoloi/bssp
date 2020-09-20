@@ -1,0 +1,53 @@
+<!--login modal-->
+      <div class="">
+         <a class="navbar-brand" href="/"> <img class="img" src="<?php echo $this->baseUrl('img/nbc/loginLogo.png'); ?>" alt="Social Security Comission Logo" width="" height="" /></a>
+      </div>
+<section class="row">
+    <div class="col-md-12">
+            <header>
+                     <h1 class="text-right text-info">Password Reset Complete</h1>
+            </header>        
+    </div>
+</section>
+
+<section class="row">
+       <div class="form-body">
+          <form class="form col-md-12 center-block" action="<?php  ?>" enctype="<?php  ?>" method="<?php ?>" >
+              <div class="form-interior">                           
+              <div class="row">
+                    <div class="col-lg-4 col-lg-push-6">
+                          <div class="form-group">
+<div class="list-group">
+    <h4 class="text-info">Password Recovery Process Complete:</h4>
+                                <p>
+                   Your OLI system Account password has been successfully reset, please click/tap on the login link below to to login into your account with your new password.
+                                </p>
+
+                    </div>
+                          </div>                  
+                    </div>                  
+              </div>
+              <div class="row">
+                    <div class="col-lg-4 col-lg-push-8">
+                            <div class="form-group">
+                                <?php ?>
+                            </div>               
+                    </div>                  
+              </div>
+              <div class="row">
+                    <div class="col-lg-4 col-lg-push-6">
+                            <div class="form-group">
+                                <a class="btn btn-primary btn-lg btn-block" href="<?php echo $this->escape($this->url(array('controller' => 'login', 'action' => 'index', 'module' => 'authentication'))) ?>">Go to sign-in page</a>
+                            </div>               
+                    </div>                  
+              </div>
+                  </div>
+          </form>
+      </div>  
+</section>     
+<div class="row options">
+      <div class="col-md-12 text-right">
+          <span><a href="<?php echo $this->escape($this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'))) ?>">Home</a></span>          
+          <span><a href="<?php echo $this->escape($this->url(array('controller' => 'signup', 'action' => 'index', 'module' => 'customers'))) ?>">Create Account</a></span>
+      </div>	
+</div>

@@ -1,0 +1,58 @@
+/* 
+    Created on : Jul 5, 2014, 2:40:20 PM
+    Author     : Innocent
+*/
+.info, .success, .warning, .error, .validation {
+  border: 1px solid;
+  margin: 10px 0px;
+  padding:15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+.info {
+  color: #00529B;
+  background-color: #BDE5F8;
+  background-image: url('./images/info.png');
+}
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image:url('./images/success.png');
+}
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url('./images/warning.png');
+}
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('./images/error.png');
+}
+.invalid{
+    color: #d8000c;
+}
+.form-control.invalid {
+    background-color: #fff;
+    background-image: none;
+    border: 2px solid #d8000c;
+}
+@keyframes shake{
+    15%{ transform:translateX(-5px); }
+    30%{ transform:translateX(5px); }
+	45%{ transform:translateX(-3px); }
+	60%{ transform:translateX(3px); }
+	75%{ transform:translateX(2px); }
+	100%{ transform:none; }
+}
+@-webkit-keyframes shake{
+    25%{ -webkit-transform:translateX(-6px); }
+    75%{ -webkit-transform:translateX(6px); }
+}
+input.invalid, 
+select.invalid, 
+textarea.invalid{ border:1px solid #CE5454; 
+              box-shadow:0 0 4px -2px #CE5454; 
+              position:relative; left:0; 
+              -moz-animation:.7s 1 shake linear; 
+              -webkit-animation:0.7s 1 shake linear; }

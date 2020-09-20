@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+<title>Experiments | Multiple Expand All/Collapse All - demo</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="language" content="en" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Adriana Palazova - www.adipalaz.com" />
+
+<style type="text/css">
+/* --------
+  The CSS rules offered here are just an example, you may use them as a base. 
+ --------- */
+* {margin:0; padding:0}
+/* --- Page Structure  --- */
+html {height:100%}
+body {
+  min-width:400px;
+  width:100%;
+  height:101%;
+  background:#fff;
+  color:#333;
+  font:76%/1.6 verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif;
+  text-align:center
+}
+#wrapper{
+  margin:0 auto;
+  padding:15px 15% 8em;
+  text-align:left
+}
+#content {
+  max-width:70em;
+  width:100%;
+  margin:0 auto;
+  padding-bottom:20px;
+  overflow:hidden
+}
+.demo {
+  margin:1.5em 0;
+  padding:1.5em 1.5em 0.75em;
+  border:1px solid #ccc;
+  position:relative;
+  overflow:hidden
+}
+.collapse p {padding:0 10px 1em}
+
+.switch {position:absolute; top:1.5em; right: 1.5em; padding:3px}
+
+.post .switch {position:static; text-align:right}
+
+.post .main{margin-bottom:.3em; padding-bottom:0}
+
+.other li, .summary {margin-bottom:.3em; padding:1em; border:1px solid #e8e7e8; background-color:#f8f7f8}
+
+.other ul {list-style-type:none; text-align:center}
+
+/* --- Headings  --- */
+h1 {
+  margin-bottom:1em; 
+  font-family:georgia,'times new roman',times,serif; 
+  font-size:2.5em; 
+  font-weight:normal; 
+  color:#c30
+}
+h2 {margin-bottom:1em; padding:3px; background-color:#eee}
+h2, h3{font-size:1em}
+
+.expand{padding-bottom:.75em}
+
+/* --- Links  --- */
+a:link, a:visited {
+  border:1px dotted #ccc;
+  border-width:0;
+  text-decoration:none;
+  color:blue
+}
+a:hover, a:active, a:focus {
+  border-style:solid;
+  background-color:#f0f0f0;
+  text-decoration:underline;
+  outline:0 none
+}
+a:active, a:focus {
+  color:red;
+}
+.expand a {
+  display:block;
+  padding:3px 10px
+}
+.expand a:link, .expand a:visited {
+  border-width:1px;
+  background-image:url(img/arrow-down.gif);
+  background-repeat:no-repeat;
+  background-position:98% 50%;
+}
+.expand a:hover, .expand a:active, .expand a:focus {
+}
+.expand a.open:link, .expand a.open:visited {
+  border-style:solid;
+  background:#eee url(img/arrow-up.gif) no-repeat 98% 50%
+}
+</style>
+<!--[if lte IE 6]>
+<style type="text/css">
+h3 a, .demo {position:relative; height:1%}
+</style>
+<![endif]-->
+
+<!--[if lte IE 6]>
+<script type="text/javascript">
+   try { document.execCommand( "BackgroundImageCache", false, true); } catch(e) {};
+</script>
+<![endif]-->
+<!--[if !lt IE 6]><!-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/expand.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(function() {
+    $("#content h3.expand").toggler();
+    $("#content div.demo").expandAll({trigger: "h3.expand", ref: "h3.expand"});
+    $("#content div.other").expandAll({
+      expTxt : "[Show]", 
+      cllpsTxt : "[Hide]",
+      ref : "ul.collapse",
+      showMethod : "show",
+      hideMethod : "hide"
+    });
+    $("#content div.post").expandAll({
+      expTxt : "[Read this entry]", 
+      cllpsTxt : "[Hide this entry]",
+      ref : "div.collapse", 
+      localLinks: "p.top a"    
+    });    
+});
+//--><!]]>
+</script>
+<!--<![endif]-->
+</head>
+
+<body>
+    <div id="wrapper"> 
+      <div id="content">  
+        <h1 class="heading">jQuery experiments: Multiple Expand All/Collapse All demo</h1>
+          <div class="demo">
+            <h2>Category One</h2>
+            <h3 class="expand">Title 1</h3>
+            <div class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <h3 class="expand">Title 2</h3>
+            <div class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <h3 class="expand">Title 3</h3>
+            <div class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          <div class="demo">
+            <h2>Category Two</h2>
+            <h3 class="expand">Title 1</h3>
+            <div class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <h3 class="expand">Title 2</h3>
+            <div class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <h3 class="expand">Title 3</h3>
+            <div class="collapse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          <div class="demo other">
+            <h2>Other Stuff</h2>
+            <ul class="collapse">
+                <li>See also <a href="http://adipalaz.awardspace.com/experiments/jquery/expand.html">jQuery: Expand/Collapse</a>
+                and <a href="http://adipalaz.awardspace.com/experiments/jquery/expandAll_alternative_use.html">jQuery: An alternative use of expandAll()</a></li>
+            </ul>
+          </div>
+          <div class="demo post">
+            <h2>This is the title of my entry</h2>
+            <div class="summary">
+                <p>This is a short summary of my entry. Another alternative use of expandAll() ...</p>
+            </div>
+            <div class="collapse">
+                <p>This is the content of my entry.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" class="<?php echo $this->escape($this->form->getAttrib('class')) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <legend>Project Number</legend>                           
+                            <section class="row text-info">
+                                <div class="col-lg-3"><strong><?php echo $this->form->projectNumber->getValue(); ?></strong></div>
+                                <div class="col-lg-3"><?php echo $this->form->projectId; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->projectNumber; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->id; ?></div>
+                            </section>                                                     
+                        </fieldset>                  
+                        <fieldset>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->entityType; ?></div>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Resolution Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-3"><?php echo $this->form->discussionDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->corespondenceDate; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->discussionStatus; ?></div>
+                                <div class="col-lg-3">
+                                    <?php echo $this->form->requestType; ?></div>
+                            </section>                           
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Consultant Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->consultantId; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->principleConsultant; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->mouPsSignedDate; ?></div>
+                            </section>                           
+                        </fieldset>
+                        <fieldset>
+                            <legend>Funds Information</legend>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->fundsApproved; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->fundsOutstanding; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->fundsApprovedDate; ?></div>
+                            </section>                           
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Payments Information</legend>
+                            <section class="row instalment">
+                                <div class="col-lg-3"><?php echo $this->form->phase; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->instalmentAmount; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->instalmentDate; ?></div>
+                                <div class="col-lg-3">
+                                    <dt id="button-label"><label class="optional" for="btn_remove">Actions</label></dt>
+                                    <dd><button disabled="disabled" class="form-control btn" type="button" id="" name="btn_remove">Remove</button></dd>
+                                </div>
+                            </section>
+                            <section class="" id="dynamic-form-wrapper">
+                                
+                            </section>                           
+                            <section class="row">
+                                <div class="col-lg-3 loading-status"></div>
+                                <div class="col-lg-3 text-right loading-status" id="loading-status"></div>
+                                <div class="col-lg-3 text-right loading-status" id="loading-status"></div>
+                                <div class="col-lg-3 text-right"><?php echo $this->form->newInstalment; ?></div>
+                            </section>
+                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Assignment Extension Information</legend>
+                            <?php if(count($this->extensions) > 0): ?>
+                            <section class="row">
+                                <div class="col-lg-12">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Discussion Date</th>
+                                                <th>Extension To Date</th>
+                                                <th>Extension Phase</th>
+                                                <th>Extension Remarks</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach($this->extensions as $extension): ?>
+                                            <tr>
+                                                <td><?php echo $this->escape($extension['discussionDate']); ?></td>
+                                                <td><?php echo $this->escape($extension['extendedToDate']); ?></td>
+                                                <td><?php echo $this->escape($extension['phase']); ?></td>
+                                                <td><?php echo $this->escape($extension['remarks']); ?></td>
+                                                <td><a href="<?php echo $this->escape($this->url(array('module' => 'extensions','controller'=>'update','action'=>'index' , 'id' => $this->escape($extension['id'])),null,true))?>">Update details</a></td>
+                                            </tr>
+                                           <?php endforeach; ?>
+                                        </tbody>
+                                        <tfoot>
+                                            
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </section>
+                            <?php else: ?>
+                            <section class="row">
+                                <div class="col-lg-12">
+                                    <p class="text-info">
+                                        There are no assignment extension records at the moment for this project.
+                                    </p>
+                                </div>
+                            </section>                            
+                            <?php endif; ?>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->assignmentDiscussionDate; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->assignmentEstensionDateTo; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->assignmentCommitteeRemarks; ?></div>
+                            </section>                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Implementation Status Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->dateIssuedToPromoters; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->reportType; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->sourceOfFunds; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->implementationRemarks; ?></div>
+                            </section>                             
+                        </fieldset>
+                        <fieldset>
+                            <legend>Overall Project Employment Creation Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->numberOfMaleEmployed; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->numberOfFemaleEmployed; ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>  
+                            
+                        </fieldset>                 
+                <fieldset class="actions-wrap">                   
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save Resolution'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>    

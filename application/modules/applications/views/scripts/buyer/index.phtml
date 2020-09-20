@@ -1,0 +1,59 @@
+<section class="row">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+          </div>
+          <div class="panel-body">                
+                <div class="large-12 medium-12 columns">
+<div class="container" id="resources_container">
+        <ul id="resources">
+<li class="progression"><?php echo $this->partial('/partials/new-buyer.phtml',[]) ?></li>
+    <li>
+        <div class="large-12 medium-12 columns pagination">
+                   <?php echo $this->paginationControl($this->paginator, 'Elastic',['/partials/pagination.phtml' , 'default'] ); ?>
+        </div>
+    </li>
+            <?php foreach ($this->paginator as $objEntity): ?>
+        <li class="resource" id="resource_pet">
+    <div class="heading">
+      <h2>
+        <a href="#!/pet" onclick="Docs.toggleEndpointListForResource('pet');"><?php echo $this->escape($objEntity['id']) ?></a>  : <?php echo $this->escape($objEntity['firstName'] . ' ' . $objEntity['lastName']) ?>
+      </h2>
+      <ul class="options">
+        <li>
+          <a href="#!/pet" id="endpointListTogger_pet" onclick="Docs.toggleEndpointListForResource('pet');">Show/Hide Details</a>
+        </li>
+        <li>
+          <a href="#" onclick="Docs.collapseOperationsForResource('pet'); return false;">
+            View auction history
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->escape($this->url(array('module'=>'auction','controller' => 'buyer', 'action' => 'delete' , 'id'=> $this->escape($objEntity['id'])), null, true)) ?>" onclick="Docs.expandOperationsForResource('pet'); return false;">
+            Remove
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->escape($this->url(array('module'=>'auction','controller' => 'buyer', 'action' => 'update' , 'id'=> $this->escape($objEntity['id'])), null, true)) ?>">Edit</a>
+        </li>
+      </ul>
+    </div>
+
+    </li>
+    <?php endforeach; ?>
+    <li>
+        <div class="large-12 medium-12 columns pagination">
+                   <?php echo $this->paginationControl($this->paginator, 'Elastic',['/partials/pagination.phtml' , 'default'] ); ?>
+        </div>
+    </li>
+<li class="progression"><?php echo $this->partial('/partials/new-buyer.phtml',[]) ?></li>    
+        </ul>   
+</div>
+                </div>
+              <div class="large-12 medium-12 columns text-right">
+                 
+                 
+              </div>              
+        </div>
+    </div>
+    
+</section>

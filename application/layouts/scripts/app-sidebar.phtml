@@ -1,0 +1,10 @@
+<div id="sidebar">
+                <nav>
+                <?php 
+                echo $this->navigation()->menu()->setMinDepth(1)->setMaxDepth(1)->renderMenu(null , array(
+                    'ulClass'=>'nav navbar-nav',
+                    'liClass'=>'nav'
+                )) . PHP_EOL;            
+                ?>                     
+                </nav>
+</div>

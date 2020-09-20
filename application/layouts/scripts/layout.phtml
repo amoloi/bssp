@@ -1,0 +1,118 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en" dir="ltr">
+<head>
+<?php echo $this->headTitle(); ?>
+<?php echo $this->headMeta(); ///exit('default layout');?>
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/bootstrap/css/bootstrap.min.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/bootstrap/daterangepicker/daterangepicker-bs3.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/jquery/selectric/selectric.css') ?>" type="text/css" media="all">   
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/jquery/ui/1.12/jquery-ui.min.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/moa-modal/src/css/moa-modal.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/port-box/css/port-box.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/validator/validator.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('css/style.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('css/table/style.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('css/bssp.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('css/tabs.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/jblac/accordion/css/style.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('css/notification/notification.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('css/font-awesome/css/font-awesome.min.css') ?>" type="text/css" media="all">
+
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/zebra/datepicker/css/bootstrap.css') ?>" type="text/css" media="all">
+<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/zebra/dialog/css/flat/zebra_dialog.css') ?>" type="text/css" media="all">
+
+
+<!--<link rel="stylesheet" href="<?php echo  $this->baseUrl('libs/jquery/ui/themes/base/minified/jquery-ui.min.css') ?>" type="text/css" media="all">-->
+
+<script src="<?php echo  $this->baseUrl('libs/jquery/2.1.1/jquery.min.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/bootstrap/daterangepicker/moment.min.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/bootstrap/daterangepicker/daterangepicker.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/jquery/ui/1.12/jquery-ui.min.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/jquery/easing/jquery.easing.1.3.min.js'); ?>"></script>
+
+<script src="<?php echo  $this->baseUrl('libs/tabs/tabs.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/bootstrap/js/bootstrap.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/zebra/datepicker/js/zebra_datepicker.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/moa-modal/src/js/moa-modal.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/port-box/js/port-box.slimscroll.min.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/zebra/dialog/js/zebra_dialog.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/jquery/selectric/jquery.selectric.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/jquery/slim-scroll/jquery.slimscroll.min.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/jblac/accordion/js/expand.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('libs/jquery/validation/jquery.validate.min'); ?>"></script>
+<!--  Scripts -->
+<script src="<?php echo  $this->baseUrl('js/setup.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('js/bssp-functions.js'); ?>"></script>
+<script src="<?php echo  $this->baseUrl('js/bssp.js'); ?>"></script>
+
+<!-- .......... -->
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="styles/ie.css" type="text/css" media="all">
+<script src="scripts/ie/css3-mediaqueries.min.js"></script>
+<script src="scripts/ie/ie9.js"></script>
+<script src="scripts/ie/html5shiv.min.js"></script>
+<![endif]-->
+   <?php $this->headLink()
+                          ->appendStylesheet($this->baseUrl('/css/bssp.co.css'));?>
+    <?php echo $this->navigation()->links(); ?>
+   <?php echo $this->headLink(); ?>
+   <?php echo $this->headScript(); ?>
+<style>
+    td{
+        padding: 2px 4px;
+    }
+</style>
+</head>
+<body class="auction" onload="">
+<div id="wrap" class="container">
+    <!-- Header Contents -->
+<?php echo $this->render('app-header.phtml'); ?>
+    <section class="row">
+        <?php echo $this->render('app-sidebar.phtml'); ?>
+    </section>
+    <section class="breadcrumb">
+            <hgroup>
+                <article class="row" id="breadcrumb-container">
+                    <section class="col-lg-9">
+                                <?php
+                                        echo $this->navigation()->breadcrumbs() ->setSeparator("&nbsp; &frasl; &nbsp;")->setLinkLast(false)->setMinDepth(0)->render();
+                                 ?>                        
+                    </section>
+                    <section class="col-lg-3 text-right">
+                        <span class="ct" id="ct"><?php echo $this->currentDate()?></span>
+                    </section>                    
+                </article>
+            </hgroup>        
+    </section>        
+    </div>
+<div class="container">
+    <!-- Main messages -->
+        <section class="row">
+                <section class="col-lg-12">
+                    <?php echo $this->flashMessages(); ?>
+                </section>        
+        </section>
+    <!-- Main Contents -->    
+        <section class="row">
+            <section class="row">
+                                   <!-- Content -->
+                            <?php echo $this->layout()->content; ?>
+            </section>       
+
+        </section>
+</div>
+    <!-- Footer Contents -->    
+    <footer>
+        <section id="" class="container">
+            <?php echo $this->render('app-footer.phtml'); ?>
+        </section>        
+    </footer>   
+ <!--
+ Script COntainer
+ -->
+
+<script src="<?php echo  $this->baseUrl('js/app-validation.js'); ?>"></script>
+
+</body>
+</html>

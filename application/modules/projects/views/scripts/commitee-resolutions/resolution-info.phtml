@@ -1,0 +1,141 @@
+<?php exit('This page has been intentionally left blank.') ?>
+<form action="<?php ?>" class="<?php  ?>" enctype="<?php  ?>" method="<?php ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <legend>Project Number</legend>                           
+                            <section class="row text-info">
+                                <div class="col-lg-3"><strong><?php  ?></strong></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                            </section>                                                     
+                        </fieldset>                  
+                        <fieldset>
+                            <section class="row">
+                                <div class="col-lg-6"><?php  ?></div>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Resolution Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3">
+                                    <?php  ?></div>
+                            </section>                           
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Consultant Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                            </section>                           
+                        </fieldset>
+                        <fieldset>
+                            <legend>Funds Information</legend>
+                            <section class="row">
+                                <div class="col-lg-6"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                            </section>                           
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Payments Information</legend>
+                            <section class="row instalment">
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                                <div class="col-lg-3"><?php  ?></div>
+                            </section>
+                            <section class="" id="dynamic-form-wrapper">
+                                
+                            </section>                           
+                            <section class="row">
+                                <div class="col-lg-3 loading-status"></div>
+                                <div class="col-lg-3 text-right loading-status" id="loading-status"></div>
+                                <div class="col-lg-3 text-right loading-status" id="loading-status"></div>
+                                <div class="col-lg-3 text-right"><?php  ?></div>
+                            </section>
+                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Assignment Extension Information</legend>
+                            <?php if(count($this->extensions) > 0): ?>
+                            <section class="row">
+                                <div class="col-lg-12">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Discussion Date</th>
+                                                <th>Extension To Date</th>
+                                                <th>Extension Phase</th>
+                                                <th>Extension Remarks</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach($this->extensions as $extension): ?>
+                                            <tr>
+                                                <td><?php echo $this->escape($extension['discussionDate']); ?></td>
+                                                <td><?php echo $this->escape($extension['extendedToDate']); ?></td>
+                                                <td><?php echo $this->escape($extension['phase']); ?></td>
+                                                <td><?php echo $this->escape($extension['remarks']); ?></td>
+                                                <td><a href="<?php echo $this->escape($this->url(array('module' => 'extensions','controller'=>'update','action'=>'index' , 'id' => $this->escape($extension['id'])),null,true))?>">Update details</a></td>
+                                            </tr>
+                                           <?php endforeach; ?>
+                                        </tbody>
+                                        <tfoot>
+                                            
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </section>
+                            <?php else: ?>
+                            <section class="row">
+                                <div class="col-lg-12">
+                                    <p class="text-info">
+                                        There are no assignment extension records at the moment for this project.
+                                    </p>
+                                </div>
+                            </section>                            
+                            <?php endif; ?>
+                            <section class="row">
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php  ?></div>
+                            </section>                            
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project Implementation Status Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php  ?></div>
+                            </section>                             
+                        </fieldset>
+                        <fieldset>
+                            <legend>Overall Project Employment Creation Information</legend>                           
+                            <section class="row">
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"><?php  ?></div>
+                                <div class="col-lg-4"></div>
+                            </section>  
+                            
+                        </fieldset>                 
+                <fieldset class="actions-wrap">                   
+                    <ul id="actions">
+                        <li><?php  ?></li>
+                        <li><?php  ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>    

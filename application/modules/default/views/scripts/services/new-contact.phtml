@@ -1,0 +1,24 @@
+<?php
+    echo sprintf(   '<article class="dynamic-row contact" id="contact_%d">
+                            <section class="row">
+                                <div class="col-lg-4 first-name">%s</div>
+                                <div class="col-lg-4 middle-name">%s</div>
+                                <div class="col-lg-4 last-name">%s</div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-4 contact-title">%s</div>
+                                <div class="col-lg-6 contact-position">%s</div>
+                                <div class="col-lg-2 remove">
+                                        <button onclick="bssp.removeContact(%d)" class="form-control btn btn_remove" type="button" id="btn_remove" name="btn_remove">Remove</button>
+                                </div>
+                            </section>                            
+                    </article>' , 
+
+                                $this->rowCount ,
+                                $this->form->contactFirstName ,
+                                $this->form->contactMiddleName , 
+                                $this->form->contactLastName,
+                                $this->form->contactTitle,
+                                $this->form->contactPosition,
+                                $this->rowCount
+                                );

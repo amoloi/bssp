@@ -1,0 +1,104 @@
+<form class="search-form" method="post" action="/search/applications/">
+<section>
+  
+      
+    <div class="table">
+    <div class="row header blue">
+      <div class="cell">
+        Application Number
+      </div>
+      <div class="cell">
+        Applicant Name
+      </div>
+      <div class="cell">
+        Date of Application
+      </div>        
+      <div class="cell">
+        Request Type
+      </div>
+      <div class="cell">
+        Request Status
+      </div>
+      <div class="cell"></div>         
+    </div>
+    <div class="row search-row">
+        
+            <div class="cell">
+              <?php echo $this->form->applicationNumber ?>
+            </div>
+            <div class="cell">
+              <?php echo $this->form->applicantName ?>
+            </div>
+            <div class="cell">
+              <?php echo $this->form->applicationDate ?>
+            </div>
+            <div class="cell">
+              <?php  echo $this->form->requestType ?>
+            </div>
+            <div class="cell ">
+              <?php echo $this->form->requestStatus ?>
+            </div>
+            <div class="cell action text-right">
+                <button class="btn btn-block btn-success" type="submit" id="btnSubmit" name="btnSubmit"><i class="fa fa-search"></i> Search</button>
+            </div>
+        
+    </div>
+<?php if(count($this->paginator) > 0): ?>
+        
+            <?php $count = 1 ; foreach ($this->paginator as $entityOnject): ?>
+
+                <div class="row">
+                  <div class="cell">
+                    <span class="text-info"><?php echo $this->escape($count) ?></span>  : <?php echo $this->escape($entityOnject['applicationNumber']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['applicantName']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['applicationDate']) ?>
+                  </div>
+                  <div class="cell">
+                    <?php echo $this->escape($entityOnject['requestType'])  ?>
+                  </div>
+                  <div class="cell status-<?php echo strtolower($this->escape($entityOnject['requestStatus'])) ?>">
+                    <?php echo $this->escape($entityOnject['requestStatus']) ?>
+                  </div>
+                    <div class="cell action text-right">
+                                <?php if('APPROVED' === $this->escape($entityOnject['requestStatus'])): ?>
+                                            <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'request-details', 'action' => 'index' , 'rn'=> $this->escape($entityOnject['requestNumber'])), null, true)) ?>" onclick="">
+                                              View Request Details
+                                            </a>
+                                            <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'details', 'action' => 'index' , 'an'=> $this->escape($entityOnject['applicationNumber'])), null, true)) ?>" onclick="">
+                                             View Application Details
+                                            </a>                                                                                         
+                                <?php else: ?>
+                                            <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'create', 'action' => 'delete-request' , 'rn'=> $this->escape($entityOnject['requestId'])), null, true)) ?>" onclick="return confirm('Are you sure you want to delete this request ? It cannot be restored at a later time! Do you wish to continue?');">
+                                              Remove Request
+                                            </a>
+                                            <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'create', 'action' => 'delete' , 'id'=> $this->escape($entityOnject['applicationId'])), null, true)) ?>" onclick="return confirm('Are you sure you want to delete this application ? It cannot be restored at a later time! Do you wish to continue?');">
+                                              Remove Application
+                                            </a>                                    
+                                            <a href="<?php echo $this->escape($this->url(array('module'=>'promoters','controller' => 'update', 'action' => 'index' , 'an'=> $this->escape($entityOnject['applicationNumber'])), null, true)) ?>">Edit Application</a>                   
+                                <?php endif; ?> 
+                    </div>                   
+                </div>                               
+            <?php $count++; endforeach; ?>
+        <?php else: ?>
+          </div> 
+</section>    
+                    
+    <section class="row">
+        <div class="info-wrap">
+            <p class="text-info info">
+                There are no applications records in the BSSP system to match your search criteria.Please change the search criteria and try again.
+            </p>
+        </div>
+    </section>                            
+        <?php endif; ?>       
+   
+
+
+<section>
+    <?php echo $this->paginationControl($this->paginator, 'Elastic', ['partials/pagination.phtml' , 'service']); ?>
+</section>
+    </form>

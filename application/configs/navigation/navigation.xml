@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+    <nav>
+        <label>Home</label>
+        <controller>index</controller>
+        <action>index</action>
+                <resource>default:index</resource>
+                <privilege>index</privilege>        
+        <pages>
+            <employers>
+                <label>Employers</label>
+                <module>members</module>
+                <controller>employers</controller>
+                <action>index</action>
+                            <resource>members:employers</resource>
+                            <privilege>index</privilege>
+                            <pages>
+                                <newemployer>
+                                    <label>New Employer</label>
+                                    <module>members</module>
+                                    <controller>employers</controller>
+                                    <action>create</action>
+                                        <resource>employers:create</resource>
+                                        <privilege>create</privilege>
+                                </newemployer>                                
+                            </pages>                 
+            </employers>
+            <employees>
+                <label>Employees</label>
+                <module>members</module>
+                <controller>employees</controller>
+                <action>index</action>
+                            <resource>members:employees</resource>
+                            <privilege>index</privilege>
+                            <pages>
+                                <newemployees>
+                                    <label>New Employee</label>
+                                    <module>members</module>
+                                    <controller>employees</controller>
+                                    <action>create</action>
+                                        <resource>employees:create</resource>
+                                        <privilege>create</privilege>
+                                </newemployees>                                 
+                            </pages>                 
+            </employees>            
+
+                                                          
+            <claims>
+                <label>Claims</label>
+                <module>claims</module>
+                <controller>index</controller>
+                <action>index</action>
+                    <resource>claims:index</resource>
+                    <privilege>index</privilege>
+            </claims>
+<!--            <services>
+                <label>Services</label>
+                <module>default</module>
+                <controller>services</controller>
+                <action>index</action>
+                    <resource>default:index</resource>
+                    <privilege>index</privilege>
+                    <pages>
+                        <vourcher-recharge>
+                            <label>Vourcher Recharge</label>
+                            <module>default</module>
+                            <controller>services</controller>
+                            <action>recharge</action>
+                                <resource>default:services</resource>
+                                <privilege>recharge</privilege>                            
+                        </vourcher-recharge>
+                        
+                    </pages>                 
+            </services>            
+            <users>
+                <label>System Users</label>
+                <module>users</module>
+                <controller>index</controller>
+                <action>index</action>
+                            <resource>users:index</resource>
+                            <privilege>index</privilege>                
+                <pages>
+                    <newuser>
+                        <label>New User</label>
+                        <module>users</module>
+                        <controller>index</controller>
+                        <action>new</action>
+                            <resource>users:index</resource>
+                            <privilege>new</privilege>                         
+                    </newuser>
+                    <useredit>
+                        <label>Edit Information</label>
+                        <module>users</module>
+                        <controller>index</controller>
+                        <action>edit</action>
+                            <resource>users:index</resource>
+                            <privilege>edit</privilege> 
+                    </useredit>
+                    <userinfo>
+                        <label>User Information</label>
+                        <module>users</module>
+                        <controller>index</controller>
+                        <action>info</action>
+                            <resource>users:index</resource>
+                            <privilege>info</privilege>                        
+                    </userinfo>                    
+                </pages>
+            </users>
+            <creditmanager>
+                <label>Credit Management</label>
+                <module>creditmanager</module>
+                <controller>index</controller>
+                <action>index</action>
+                            <resource>creditmanager:index</resource>
+                            <privilege>index</privilege>                
+                <pages>
+                    <purchasecredit>
+                        <label>Purchase</label>
+                        <module>creditmanager</module>
+                        <controller>index</controller>
+                        <action>purchase</action>
+                            <resource>creditmanager:purchase</resource>
+                            <privilege>purchase</privilege>                        
+                    </purchasecredit> 
+                    <credithistory>
+                        <label>History</label>
+                        <module>creditmanager</module>
+                        <controller>index</controller>
+                        <action>history</action>
+                            <resource>creditmanager:index</resource>
+                            <privilege>history</privilege>                         
+                    </credithistory>
+                    <creditsales>
+                        <label>Credit selling</label>
+                        <module>creditmanager</module>
+                        <controller>sale</controller>
+                        <action>index</action>
+                            <resource>creditmanager:index</resource>
+                            <privilege>index</privilege>                         
+                    </creditsales>
+                    <voucherdetails>
+                        <label>Voucher Details</label>
+                        <module>creditmanager</module>
+                        <controller>sale</controller>
+                        <action>save</action>
+                            <resource>creditmanager:save</resource>
+                            <privilege>save</privilege>                         
+                    </voucherdetails>                    
+            <recharge>
+                <label>Recharge</label>
+                <module>creditmanager</module>
+                <controller>recharge</controller>
+                <action>index</action>
+                    <resource>creditmanager:index</resource>
+                    <privilege>index</privilege>                         
+            </recharge>
+            <rechargeinfo>
+                <label>Account Balance Details</label>
+                <module>creditmanager</module>
+                <controller>recharge</controller>
+                <action>recharge</action>
+                    <resource>creditmanager:recharge</resource>
+                    <privilege>recharge</privilege>                         
+            </rechargeinfo>                                                                                  
+                </pages>
+            </creditmanager>  -->                              
+            <login>
+                <label>Login</label>
+                <module>login</module>
+                <controller>index</controller>
+                <action>index</action>
+                    <resource>login:index</resource>
+                    <privilege>index</privilege>                                 
+            </login>
+<!--            <admin>
+                <label>Settings</label>
+                <module>admin</module>
+                <controller>settings</controller>
+                <action>index</action>
+                    <resource>admin:settings</resource>
+                    <privilege>index</privilege>
+                    <pages>
+                        <runtimemode>
+                            <label>Runtime mode</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>runtimemode</action>
+                            <resource>admin:settings</resource>
+                            <privilege>runtimemode</privilege>
+                        </runtimemode>
+                        <reftypes>
+                            <label>Reference types</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>reftypes</action>
+                            <resource>admin:settings</resource>
+                            <privilege>reftypes</privilege>
+                        </reftypes>
+                        <newreftype>
+                            <label>New reference type</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>newreftype</action>
+                            <resource>admin:settings</resource>
+                            <privilege>newreftype</privilege>
+                        </newreftype>
+                        <editreftype>
+                            <label>Edit reference type</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>editreftype</action>
+                            <resource>admin:settings</resource>
+                            <privilege>editreftype</privilege>
+                        </editreftype>                        
+
+                        <refcodes>
+                            <label>Reference codes</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>refcodes</action>
+                            <resource>admin:settings</resource>
+                            <privilege>refcodes</privilege>
+                        </refcodes>
+                        <newrefcode>
+                            <label>New reference code</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>newrefcode</action>
+                            <resource>admin:settings</resource>
+                            <privilege>newrefcode</privilege>
+                        </newrefcode>
+                        <editrefcode>
+                            <label>Edit reference code</label>
+                            <module>admin</module>
+                            <controller>settings</controller>
+                            <action>editrefcode</action>
+                            <resource>admin:settings</resource>
+                            <privilege>editrefcode</privilege>
+                        </editrefcode>                                                                                                                                                                        
+                        
+                    </pages>
+            </admin> -->
+            <logout>
+                <label>Logout</label>
+                <module>login</module>
+                <controller>index</controller>
+                <action>logout</action>
+                    <resource>login:index</resource>
+                    <privilege>logout</privilege>                                
+            </logout>                                                       
+        </pages>
+    </nav>
+</configdata>

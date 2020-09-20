@@ -1,0 +1,172 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" class="zend-form" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <legend>Application Information</legend>
+                            <section class="row">
+                                <div class="col-lg-3"><?php echo $this->form->application->applicationDate; ?><?php echo $this->form->entityCategory; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->application->applicationAcknowledgementDate; ?></div>
+                                <div class="col-lg-3"></div>                                
+                            </section>                            
+                            <section id="">
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->form->application->applicationLegalEntityId; ?></div>
+                                </section>                                
+                            </section>                        
+                        </fieldset>                 
+                
+                        <fieldset>
+                            <legend>Applicant Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->entityType; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->entityCategory; ?></div>                                
+                            </section>                            
+                            <section class="entity" id="individual-section">
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->form->firstName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->middleName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->lastName; ?></div>
+                                </section>                                
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->form->dateOfBirth; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->identityNumber; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->passportNumber; ?></div>
+                                </section>
+                            </section>
+                            <section class="entity" id="company-section">
+                                <section id="company" class="row">
+                                    <div class="col-lg-8"><?php echo $this->form->companyName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->companyRegistrationNumber; ?></div>
+                                </section>
+                                <section class="row">
+                                <fieldset>
+                                    <legend>Company`s/Organization`s Contact Person</legend>
+                                    
+                                        <?php if(count($this->data['contactFirstName']) === 0): ?>
+                                            <article class="dynamic-row contact">
+                                                <section class="row">
+                                                    <div class="col-lg-4"><?php echo $this->form->contact->contactFirstName; ?></div>
+                                                    <div class="col-lg-4"><?php echo $this->form->contact->contactMiddleName; ?></div>
+                                                    <div class="col-lg-4"><?php echo $this->form->contact->contactLastName; ?></div>
+                                                </section>
+                                                <section class="row">
+                                                    <div class="col-lg-4"><?php echo $this->form->contact->contactTitle; ?></div>
+                                                    <div class="col-lg-6"><?php echo $this->form->contact->contactPosition; ?></div>
+                                                    <div class="col-lg-2 remove">
+                                                        <button name="btn_remove" id="" type="button" class="form-control btn" disabled="disabled">Remove</button>
+                                                    </div>
+                                                </section>                                         
+                                            </article>
+                                        <?php else: ?>
+                                            <?php for($i = 0 ; $i < count($this->data['contactFirstName']) ; $i++): ?>
+                                                <article class="dynamic-row contact">
+                                                    <section class="row">
+                                                        <div class="col-lg-4"><?php echo $this->form->contact->contactFirstName->setValue($this->escape($this->data['contactFirstName'][$i])); ?></div>
+                                                        <div class="col-lg-4"><?php echo $this->form->contact->contactMiddleName->setValue($this->escape($this->data['contactMiddleName'][$i])); ?></div>
+                                                        <div class="col-lg-4"><?php echo $this->form->contact->contactLastName->setValue($this->escape($this->data['contactLastName'][$i])); ?></div>
+                                                    </section>
+                                                    <section class="row">
+                                                        <div class="col-lg-4"><?php echo $this->form->contact->contactTitle->setValue($this->escape($this->data['contactTitle'][$i])); ?></div>
+                                                        <div class="col-lg-6"><?php echo $this->form->contact->contactPosition->setValue($this->escape($this->data['contactPosition'][$i])); ?></div>
+                                                        <div class="col-lg-2 remove">
+                                                            <button name="btn_remove" id="btn_remove" type="button" class="form-control btn btn_remove" onclick="bssp.removeContact(<?php echo $i ?>)">Remove</button>
+                                                        </div>
+                                                    </section>                                         
+                                                </article>
+                                            <?php endfor; ?>                                
+                                        <?php endif; ?>                                    
+
+                                    <section class="dynamic-contents" id="dynamic-contents-contact"></section>                                   
+                                </fieldset>
+                                    <section class="row">
+                                        <div class="col-lg-9 text-left loading-status text-center" id="contact-loading-status"></div>
+                                        <div class="col-lg-3 text-right application"><?php echo $this->form->contact->newContact; ?></div>
+                                    </section>                                     
+                                </section>
+                            </section>                          
+                        </fieldset>
+                        <fieldset>
+                            <legend>Applicant`s Request Information</legend>
+                            
+                            <?php if(count($this->data['requestType']) === 0): ?>
+                            <article class="request">
+                                <section class="row">
+                                    <div class="col-lg-3"><?php echo $this->form->requestForm->requestType; ?><?php echo $this->form->requestForm->requestStatus; ?></div>
+                                    <div class="col-lg-3"><?php echo $this->form->requestForm->requestSector; ?></div>
+                                    <div class="col-lg-6"><?php echo $this->form->requestForm->requestPriotityArea; ?></div>
+                                </section>
+                                <section class="row">
+                                    <div class="col-lg-12"><?php echo $this->form->requestForm->requestBusinessActivity; ?></div>
+                                </section>                                
+                                <section class="row">
+                                    <div class="col-lg-10"><?php echo $this->form->requestForm->otherRequestTypeText; ?></div>
+                                    <div class="col-lg-2 remove">
+                                        <dd><button disabled="disabled" class="form-control btn" type="button" id="" name="btn_remove">Remove</button></dd>
+                                    </div>
+                                </section>                            
+                            </article>
+                            <?php else: ?>
+                                <?php for($i = 0 ; $i < count($this->data['requestType']) ; $i++): ?>
+                                    <article class="request" id="request_<?php echo $i ?>">
+                                        <section class="row">
+                                            <div class="col-lg-3"><?php echo $this->form->requestForm->requestType->setValue($this->data['requestType'][$i]); ?><?php echo $this->form->requestForm->requestStatus->setValue($this->data['requestStatus'][$i]); ?></div>
+                                            <div class="col-lg-3"><?php echo $this->form->requestForm->requestSector->setValue($this->data['requestSector'][$i]); ?></div>
+                                            <div class="col-lg-6"><?php echo $this->form->requestForm->requestPriotityArea->setValue($this->data['requestPriotityArea'][$i]); ?></div>
+                                        </section>
+                                        <section class="row">
+                                            <div class="col-lg-12"><?php echo $this->form->requestForm->requestBusinessActivity->setValue($this->data['requestBusinessActivity'][$i]); ?></div>
+                                        </section>                                         
+                                        <section class="row">
+                                            <div class="col-lg-10"><?php echo $this->form->requestForm->otherRequestTypeText->setValue($this->data['otherRequestTypeText'][$i]); ?></div>
+                                            <div class="col-lg-2 remove">
+                                                <dd><button class="form-control btn btn-danger" type="button" id="remove_<?php echo $i ?>" onclick="bssp.removeRow(this.id)" name="btn_remove">Remove</button></dd>
+                                            </div>
+                                        </section>                                
+                                    </article>    
+                                <?php endfor; ?>                                
+                            <?php endif; ?>
+                            <section class="dynamic-contents" id="dynamic-contents-request">
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-8"></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-9 text-left loading-status text-center" id="request-loading-status"></div>
+                                <div class="col-lg-3 text-right application"><?php echo $this->form->requestForm->newRow; ?></div>
+                            </section>                            
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <section class="row">
+                                <div class="col-lg-2"><?php echo $this->form->telephoneNumber; ?></div>
+                                <div class="col-lg-2"><?php echo $this->form->mobileNumber; ?></div>
+                                <div class="col-lg-2"><?php echo $this->form->faxNumber; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->emailAddress; ?></div>
+                            </section>                         
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Address Details</legend>
+                            <section class="row">
+                                <div class="col-lg-8"><?php echo $this->form->addressLineOne; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->postalAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-3"><?php echo $this->form->countryCode; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->regionCode; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->cityCode; ?></div>
+                                <div class="col-lg-3"><?php echo $this->form->constituencyCode; ?></div>                               
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->residentialAddress; ?></div>
+                            </section>                           
+                        </fieldset>               
+                <fieldset class="actions-wrap">
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save Application'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>    

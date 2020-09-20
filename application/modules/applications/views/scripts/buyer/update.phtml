@@ -1,0 +1,80 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+    <section class="contents">
+          <div class="panel-heading">
+          </div>                    
+            <div class="large-12 medium-12 columns">
+<section id="tabs-wrap" class="tabs-wrap">
+<ul class="tabs">
+            <li id="tab1" class="current">Personal Details</li>
+            <li id="tab2" class="">Contact Details</li>
+            <li id="tab3" class="">Addres Details</li>
+            <li id="tab4" class="">Payments Details</li>
+            <li id="tab5" class="">Notice/Remarks</li>
+</ul>
+<div class="contents marginbot">
+            <div class="tabscontent" id="content1" style="display: block;">
+                <fieldset>
+                    <ul>
+                        <li><?php echo $this->form->firstName; ?></li>
+                        <li><?php echo $this->form->lastName; ?></li>
+                        <li><?php echo $this->form->identityNumber; ?></li>
+                    </ul>
+                </fieldset>
+            </div>
+
+            <div class="tabscontent" id="content2" style="display: none;">
+                        <fieldset>
+                            <ul>
+                                <li><?php echo $this->form->telephoneNumber; ?></li>
+                                <li><?php echo $this->form->mobileNumber; ?></li>
+                                <li><?php echo $this->form->faxNumber; ?></li>
+                                <li><?php echo $this->form->emailAddress; ?></li>
+                            </ul>
+                        </fieldset>        
+            </div>
+
+            <div class="tabscontent" id="content3" style="display: none;">
+                        <fieldset>
+                            <ul>
+                                <li><?php echo $this->form->addressLineOne; ?></li>
+                                <li><?php echo $this->form->addressLineTwo; ?></li>
+                                <li><?php echo $this->form->postalAddress; ?></li>
+                                <li><?php echo $this->form->countryCode; ?></li>
+                                <li><?php echo $this->form->regionCode; ?></li>
+                                <li><?php echo $this->form->cityCode; ?></li>
+                            </ul>
+                        </fieldset>         
+            </div>
+            <div class="tabscontent" id="content4" style="display: none;">
+                        <fieldset>
+                            <ul>
+                                <li><?php echo $this->form->payments->depositReceivedAmount; ?></li>
+                                <li><?php echo $this->form->payments->depositRefundedAmount; ?></li>
+                                <li><?php echo $this->form->payments->initialItemPrice; ?></li>
+                                <li><?php echo $this->form->payments->closingItemPrice; ?></li>
+                            </ul>
+                        </fieldset>         
+            </div>    
+            <div class="tabscontent" id="content5" style="display: none;">
+                <fieldset>
+                    <ul>
+                        <li><?php echo $this->form->remarks; ?></li>
+                    </ul>
+                </fieldset>        
+            </div>    
+</div>
+</section>
+            </div>
+            <div class="large-12 medium-12 columns">
+                <fieldset class="actions-wrap">
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit; ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                        <li><?php echo $this->form->btnCancel; ?></li>
+                    </ul>
+                </fieldset>                 
+            </div>
+
+            <div class="col-lg-12 text-right"></div> 
+        </section>
+</form>    

@@ -1,0 +1,79 @@
+<form action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+
+            <div class="frm-contents" id="content" >
+                        <fieldset>
+                            <legend>Consultant Information</legend>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->entityType; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->entityCategory; ?></div>                                
+                            </section>                            
+                            <section id="individual-section">
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->form->firstName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->middleName; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->lastName; ?></div>
+                                </section>                                
+                                <section class="row">
+                                    <div class="col-lg-4"><?php echo $this->form->dateOfBirth; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->identityNumber; ?></div>
+                                    <div class="col-lg-4"><?php echo $this->form->passportNumber; ?></div>
+                                </section>
+                            </section>
+                            <section id="company-section">
+                                <section id="company" class="row">
+                                    <div class="col-lg-6"><?php echo $this->form->companyName; ?></div>
+                                    <div class="col-lg-6"><?php echo $this->form->companyRegistrationNumber; ?></div>
+                                </section>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->region; ?></div>
+                            </section>                            
+                        </fieldset>                
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->telephoneNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->mobileNumber; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->faxNumber; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->emailAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->residentialAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->region; ?></div>
+                            </section>                            
+                        </fieldset>                 
+                        <fieldset>
+                            <legend>Address Details</legend>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->addressLineOne; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->addressLineTwo; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->postalAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-4"><?php echo $this->form->countryCode; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->regionCode; ?></div>
+                                <div class="col-lg-4"><?php echo $this->form->cityCode; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-12"><?php echo $this->form->residentialAddress; ?></div>
+                            </section>
+                            <section class="row">
+                                <div class="col-lg-6"><?php echo $this->form->town; ?></div>
+                                <div class="col-lg-6"><?php echo $this->form->region; ?></div>
+                            </section>                            
+                        </fieldset>               
+                <fieldset class="actions-wrap">
+                    <ul id="actions">
+                        <li><?php echo $this->form->btnSubmit->setLabel('Save Consultant'); ?></li>
+                        <li><?php echo $this->form->btnReset; ?></li>
+                    </ul>
+                </fieldset>
+                </div> 
+
+</form>    

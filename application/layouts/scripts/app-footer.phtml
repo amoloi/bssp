@@ -1,0 +1,16 @@
+
+    <section class="breadcrumb">
+            <hgroup>
+                <article class="row" id="breadcrumb-container">
+                    <section class="col-lg-9">
+                                <?php
+                                        echo $this->navigation()->breadcrumbs() ->setSeparator("&nbsp; &frasl; &nbsp;")->setLinkLast(false)->setMinDepth(0)->render();
+                                 ?>                        
+                    </section>
+                    <section class="col-lg-3 text-right">
+                        <span class="ct" id=""><?php echo $this->currentDate()?></span>
+                    </section>                    
+                </article>
+            </hgroup>        
+    </section>
+

@@ -1,0 +1,70 @@
+<!--login modal-->
+      <div class="">
+         <a class="navbar-brand" href="/"> <img class="img" src="<?php echo $this->baseUrl('img/nbc/loginLogo.png'); ?>" alt="Social Security Comission Logo" width="" height="" /></a>
+      </div>
+<section class="row">
+    <div class="col-md-12 text-info">
+            <header>
+                     <h1 class="text-right">Reset Your Password</h1>
+            </header>        
+    </div>
+</section>
+
+<section class="row">
+       <div class="form-body">
+          <form class="form col-md-12 center-block" action="<?php echo $this->escape($this->form->getAction()) ?>" enctype="<?php echo $this->escape($this->form->getAttrib('enctype')) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>" >
+              <div class="row">
+                  <div class="col-lg-6">
+                      
+<div class="list-group">
+    <h4 class="text-info">Password Requirements:</h4>
+                                <p>
+                   The following requirements must be followed when selecting an OLI System password.
+                                </p>
+                                <p>
+
+                       Password must be at least eight(8) characters long. <br/>
+                       Password must be complex and difficult to guess.<br/>
+                       A password must contain characters from three of the four categories:
+                                </p>
+                                <p class="text-info" style="padding-left: 15px;">
+                           Uppercase characters (A through Z)<br/>
+                           Lowercase characters (a through z) <br/>
+                           Numeric digits (0 through 9) <br/>
+                           Special characters (for example, !, $, #, %)  <br/>                                   
+
+                                </p>
+                                <p>
+                       Password must not contain all or part of the user's OLI System account number.<br/> 
+                       Password must differ from previous passwords.                                    
+                                </p>
+                      
+                    </div>                      
+                  </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                          <div class="form-group">
+                                <?php echo $this->form->getElement('password'); ?>
+                          </div>                            
+                        </div>
+                        <div class="row">
+                          <div class="form-group">
+                              <?php echo $this->form->getElement('password_confirm'); ?>
+                          </div>                            
+                        </div>
+                        <div class="row">
+                          <div class="form-group">
+                              <?php echo $this->form->getElement('cmdsave')->setLabel('Reset password'); ?>
+                          </div>                            
+                        </div>                         
+                    </div>                  
+              </div>            
+          </form>
+      </div>  
+</section>     
+<div class="row options">
+      <div class="col-md-12 text-right">
+          <span><a href="<?php echo $this->escape($this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'))) ?>">Home</a></span>          
+          <span><a href="<?php echo $this->escape($this->url(array('controller' => 'signup', 'action' => 'index', 'module' => 'customers'))) ?>">Create Account</a></span>
+      </div>	
+</div>
